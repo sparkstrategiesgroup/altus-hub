@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8f7f4;
+  --foreground: #1a2744;
+  --altus-navy: #1a2744;
+  --altus-navy-light: #2a3a5c;
+  --altus-navy-dark: #0f1a2e;
+  --altus-gold: #c4922e;
+  --altus-gold-light: #d4a94e;
+  --altus-gold-dark: #a07624;
+  --altus-cream: #f8f7f4;
+  --altus-slate: #64748b;
+  --altus-light-gray: #f1f5f9;
+  --altus-border: #e2e8f0;
+  --altus-success: #16a34a;
+  --altus-error: #dc2626;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-altus-navy: var(--altus-navy);
+  --color-altus-navy-light: var(--altus-navy-light);
+  --color-altus-navy-dark: var(--altus-navy-dark);
+  --color-altus-gold: var(--altus-gold);
+  --color-altus-gold-light: var(--altus-gold-light);
+  --color-altus-gold-dark: var(--altus-gold-dark);
+  --color-altus-cream: var(--altus-cream);
+  --color-altus-slate: var(--altus-slate);
+  --color-altus-light-gray: var(--altus-light-gray);
+  --color-altus-border: var(--altus-border);
+  --color-altus-success: var(--altus-success);
+  --color-altus-error: var(--altus-error);
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}

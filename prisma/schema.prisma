@@ -1,0 +1,240 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  passwordHash  String?
+  image         String?
+  role          String    @default("member")
+  company       String?
+  companySize   String?
+  salesVolume   String?
+  title         String?
+  phone         String?
+  bio           String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  accounts         Account[]
+  sessions         Session[]
+  peerGroupMembers PeerGroupMember[]
+  discussions      Discussion[]
+  comments         Comment[]
+  resources        Resource[]
+  eventRsvps       EventRsvp[]
+  sentMessages     Message[]  @relation("SentMessages")
+  receivedMessages Message[]  @relation("ReceivedMessages")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Principal {
+  id         String   @id @default(cuid())
+  name       String
+  slug       String   @unique
+  title      String
+  discipline String
+  company    String?
+  bio        String
+  fullBio    String?
+  image      String?
+  linkedIn   String?
+  featured   Boolean  @default(false)
+  sortOrder  Int      @default(0)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  ledSessions ForumSession[]
+}
+
+model PeerGroup {
+  id               String   @id @default(cuid())
+  name             String
+  description      String?
+  companySizeRange String?
+  salesVolumeRange String?
+  maxMembers       Int      @default(6)
+  isActive         Boolean  @default(true)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  members  PeerGroupMember[]
+  sessions ForumSession[]
+}
+
+model PeerGroupMember {
+  id          String   @id @default(cuid())
+  userId      String
+  peerGroupId String
+  joinedAt    DateTime @default(now())
+  role        String   @default("member")
+
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  peerGroup PeerGroup @relation(fields: [peerGroupId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, peerGroupId])
+}
+
+model ForumSession {
+  id           String   @id @default(cuid())
+  title        String
+  description  String?
+  type         String   @default("principal_led")
+  scheduledAt  DateTime
+  duration     Int      @default(90)
+  location     String?
+  principalId  String?
+  peerGroupId  String?
+  status       String   @default("upcoming")
+  maxAttendees Int?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  principal  Principal?  @relation(fields: [principalId], references: [id])
+  peerGroup  PeerGroup?  @relation(fields: [peerGroupId], references: [id])
+  resources  Resource[]
+  eventRsvps EventRsvp[]
+}
+
+model Discussion {
+  id        String   @id @default(cuid())
+  title     String
+  content   String
+  category  String   @default("general")
+  isPinned  Boolean  @default(false)
+  authorId  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  author   User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  comments Comment[]
+}
+
+model Comment {
+  id           String   @id @default(cuid())
+  content      String
+  discussionId String
+  authorId     String
+  parentId     String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  discussion Discussion @relation(fields: [discussionId], references: [id], onDelete: Cascade)
+  author     User       @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  parent     Comment?   @relation("CommentReplies", fields: [parentId], references: [id])
+  replies    Comment[]  @relation("CommentReplies")
+}
+
+model Resource {
+  id           String   @id @default(cuid())
+  title        String
+  description  String?
+  type         String
+  url          String
+  sessionId    String?
+  uploadedById String
+  isPublic     Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  session    ForumSession? @relation(fields: [sessionId], references: [id])
+  uploadedBy User          @relation(fields: [uploadedById], references: [id])
+}
+
+model Event {
+  id           String    @id @default(cuid())
+  title        String
+  description  String?
+  type         String
+  startDate    DateTime
+  endDate      DateTime?
+  location     String?
+  isVirtual    Boolean   @default(false)
+  maxAttendees Int?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  rsvps EventRsvp[]
+}
+
+model EventRsvp {
+  id        String   @id @default(cuid())
+  userId    String
+  eventId   String?
+  sessionId String?
+  status    String   @default("attending")
+  createdAt DateTime @default(now())
+
+  user    User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  event   Event?        @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  session ForumSession? @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, eventId])
+  @@unique([userId, sessionId])
+}
+
+model Message {
+  id         String   @id @default(cuid())
+  content    String
+  senderId   String
+  receiverId String
+  isRead     Boolean  @default(false)
+  createdAt  DateTime @default(now())
+
+  sender   User @relation("SentMessages", fields: [senderId], references: [id], onDelete: Cascade)
+  receiver User @relation("ReceivedMessages", fields: [receiverId], references: [id], onDelete: Cascade)
+}
+
+model ContactSubmission {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  company   String?
+  phone     String?
+  message   String
+  status    String   @default("new")
+  createdAt DateTime @default(now())
+}
