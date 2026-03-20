@@ -45,11 +45,11 @@ export default async function PeerGroupDetailPage({
     <div className="mx-auto max-w-4xl space-y-6">
       <div>
         <div className="flex items-center gap-3">
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-altus-navy">
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-altus-charcoal">
             <Users className="h-6 w-6 text-altus-gold" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-altus-navy">{group.name}</h1>
+            <h1 className="text-2xl font-bold text-altus-charcoal">{group.name}</h1>
             {group.description && (
               <p className="text-sm text-altus-slate">{group.description}</p>
             )}
@@ -85,7 +85,7 @@ export default async function PeerGroupDetailPage({
                       src={m.user.image}
                     />
                     <div className="min-w-0">
-                      <p className="text-sm font-medium text-altus-navy">
+                      <p className="text-sm font-medium text-altus-charcoal">
                         {m.user.name}
                       </p>
                       <div className="flex items-center gap-1 text-xs text-altus-slate">
@@ -119,7 +119,7 @@ export default async function PeerGroupDetailPage({
               <div className="space-y-3">
                 {group.sessions.map((s) => (
                   <div key={s.id} className="rounded-lg border border-altus-border p-3">
-                    <p className="text-sm font-medium text-altus-navy">
+                    <p className="text-sm font-medium text-altus-charcoal">
                       {s.title}
                     </p>
                     <p className="text-xs text-altus-slate mt-1">

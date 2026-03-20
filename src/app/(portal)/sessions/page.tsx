@@ -22,7 +22,7 @@ export default async function SessionsPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-altus-navy">Forum Sessions</h1>
+        <h1 className="text-2xl font-bold text-altus-charcoal">Forum Sessions</h1>
         <p className="text-sm text-altus-slate">
           Monthly sessions led by Altus Principals
         </p>
@@ -30,7 +30,7 @@ export default async function SessionsPage() {
 
       {/* Upcoming */}
       <section>
-        <h2 className="mb-4 text-lg font-semibold text-altus-navy">
+        <h2 className="mb-4 text-lg font-semibold text-altus-charcoal">
           Upcoming Sessions
         </h2>
         {upcoming.length === 0 ? (
@@ -51,7 +51,7 @@ export default async function SessionsPage() {
                       <Badge variant="gold">{s.type.replace("_", " ")}</Badge>
                       <Badge variant="success">Upcoming</Badge>
                     </div>
-                    <h3 className="mt-3 font-semibold text-altus-navy">
+                    <h3 className="mt-3 font-semibold text-altus-charcoal">
                       {s.title}
                     </h3>
                     {s.description && (
@@ -93,7 +93,7 @@ export default async function SessionsPage() {
       {/* Past */}
       {past.length > 0 && (
         <section>
-          <h2 className="mb-4 text-lg font-semibold text-altus-navy">
+          <h2 className="mb-4 text-lg font-semibold text-altus-charcoal">
             Past Sessions
           </h2>
           <div className="grid gap-4 md:grid-cols-2">
@@ -102,7 +102,7 @@ export default async function SessionsPage() {
                 <Card className="h-full opacity-75 hover:opacity-100 transition-opacity">
                   <CardContent className="p-5">
                     <Badge variant="outline">Completed</Badge>
-                    <h3 className="mt-3 font-semibold text-altus-navy">
+                    <h3 className="mt-3 font-semibold text-altus-charcoal">
                       {s.title}
                     </h3>
                     <div className="mt-3 flex gap-3 text-xs text-altus-slate">

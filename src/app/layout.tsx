@@ -3,8 +3,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Altus Forum | BSC Leadership Community",
-    template: "%s | Altus Forum",
+    default: "Altus Collective | BSC Leadership Community",
+    template: "%s | Altus Collective",
   },
   description:
     "A leadership community for Building Service Contractor executives. Engage with Intention. Empower with Education. Elevate with Influence.",

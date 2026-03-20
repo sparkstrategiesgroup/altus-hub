@@ -53,17 +53,17 @@ export function PortalSidebar({ open, onClose }: PortalSidebarProps) {
         )}
       >
         <div className="flex h-16 items-center justify-between border-b border-altus-border px-4">
-          <Link href="/dashboard" className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-altus-navy">
-              <span className="text-xs font-bold text-altus-gold">A</span>
-            </div>
-            <span className="text-lg font-bold text-altus-navy">
-              Altus<span className="text-altus-gold">Forum</span>
+          <Link href="/dashboard" className="flex flex-col items-start gap-0">
+            <span className="text-lg font-bold tracking-widest text-altus-charcoal uppercase">
+              <span className="font-light">/</span>ALTUS
+            </span>
+            <span className="text-[9px] tracking-[0.2em] text-altus-slate uppercase -mt-1">
+              Collective
             </span>
           </Link>
           <button
             onClick={onClose}
-            className="lg:hidden p-1 text-altus-slate hover:text-altus-navy"
+            className="lg:hidden p-1 text-altus-slate hover:text-altus-charcoal"
             aria-label="Close sidebar"
           >
             <X size={20} />
@@ -81,8 +81,8 @@ export function PortalSidebar({ open, onClose }: PortalSidebarProps) {
                 className={cn(
                   "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
                   active
-                    ? "bg-altus-gold/10 text-altus-gold-dark"
-                    : "text-altus-slate hover:bg-altus-light-gray hover:text-altus-navy"
+                    ? "bg-altus-blue/10 text-altus-charcoal"
+                    : "text-altus-slate hover:bg-altus-light-gray hover:text-altus-charcoal"
                 )}
               >
                 <item.icon size={18} />

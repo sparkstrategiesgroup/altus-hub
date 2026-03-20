@@ -39,7 +39,7 @@ export default function LoginPage() {
     <Card className="w-full max-w-md">
       <CardHeader className="text-center">
         <CardTitle className="text-2xl">Welcome Back</CardTitle>
-        <CardDescription>Sign in to your Altus Forum account</CardDescription>
+        <CardDescription>Sign in to your Altus Collective account</CardDescription>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">

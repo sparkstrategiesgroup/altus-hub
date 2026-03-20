@@ -54,7 +54,7 @@ export default async function DiscussionDetailPage({
                 {discussion.isPinned && (
                   <Pin size={14} className="text-altus-gold" />
                 )}
-                <h1 className="text-xl font-bold text-altus-navy">
+                <h1 className="text-xl font-bold text-altus-charcoal">
                   {discussion.title}
                 </h1>
               </div>
@@ -81,7 +81,7 @@ export default async function DiscussionDetailPage({
             </div>
           </div>
 
-          <div className="mt-6 text-altus-navy leading-relaxed whitespace-pre-wrap">
+          <div className="mt-6 text-altus-charcoal leading-relaxed whitespace-pre-wrap">
             {discussion.content}
           </div>
         </CardContent>

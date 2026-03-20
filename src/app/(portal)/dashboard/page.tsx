@@ -55,7 +55,7 @@ export default async function DashboardPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-altus-navy">Dashboard</h1>
+        <h1 className="text-2xl font-bold text-altus-charcoal">Dashboard</h1>
         <p className="text-sm text-altus-slate">
           Welcome back, {session?.user?.name || "Member"}
         </p>
@@ -71,7 +71,7 @@ export default async function DashboardPage() {
                   <stat.icon className="h-5 w-5 text-altus-gold" />
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-altus-navy">
+                  <p className="text-2xl font-bold text-altus-charcoal">
                     {stat.value}
                   </p>
                   <p className="text-sm text-altus-slate">{stat.label}</p>
@@ -109,7 +109,7 @@ export default async function DashboardPage() {
                     href={`/sessions/${s.id}`}
                     className="flex items-start gap-3 rounded-lg p-3 hover:bg-altus-light-gray transition-colors"
                   >
-                    <div className="flex h-10 w-10 shrink-0 flex-col items-center justify-center rounded-lg bg-altus-navy text-white">
+                    <div className="flex h-10 w-10 shrink-0 flex-col items-center justify-center rounded-lg bg-altus-charcoal text-white">
                       <span className="text-[10px] font-medium">
                         {new Date(s.scheduledAt).toLocaleDateString("en-US", {
                           month: "short",
@@ -120,7 +120,7 @@ export default async function DashboardPage() {
                       </span>
                     </div>
                     <div className="min-w-0">
-                      <p className="text-sm font-medium text-altus-navy truncate">
+                      <p className="text-sm font-medium text-altus-charcoal truncate">
                         {s.title}
                       </p>
                       {s.principal && (
@@ -163,7 +163,7 @@ export default async function DashboardPage() {
                     className="block rounded-lg p-3 hover:bg-altus-light-gray transition-colors"
                   >
                     <div className="flex items-start justify-between gap-2">
-                      <p className="text-sm font-medium text-altus-navy truncate">
+                      <p className="text-sm font-medium text-altus-charcoal truncate">
                         {d.title}
                       </p>
                       <Badge variant="outline" className="shrink-0">

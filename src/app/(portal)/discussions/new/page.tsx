@@ -77,14 +77,14 @@ export default function NewDiscussionPage() {
             <div className="space-y-1.5">
               <label
                 htmlFor="category"
-                className="block text-sm font-medium text-altus-navy"
+                className="block text-sm font-medium text-altus-charcoal"
               >
                 Category
               </label>
               <select
                 id="category"
                 name="category"
-                className="w-full rounded-lg border border-altus-border bg-white px-3.5 py-2.5 text-sm text-altus-navy focus:border-altus-gold focus:outline-none focus:ring-2 focus:ring-altus-gold/20"
+                className="w-full rounded-lg border border-altus-border bg-white px-3.5 py-2.5 text-sm text-altus-charcoal focus:border-altus-gold focus:outline-none focus:ring-2 focus:ring-altus-gold/20"
               >
                 {categories.map((cat) => (
                   <option key={cat.value} value={cat.value}>

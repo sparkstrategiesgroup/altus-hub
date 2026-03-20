@@ -30,14 +30,14 @@ export default async function EventsPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-altus-navy">Events</h1>
+        <h1 className="text-2xl font-bold text-altus-charcoal">Events</h1>
         <p className="text-sm text-altus-slate">
           Networking events, workshops, and industry conferences
         </p>
       </div>
 
       <section>
-        <h2 className="mb-4 text-lg font-semibold text-altus-navy">
+        <h2 className="mb-4 text-lg font-semibold text-altus-charcoal">
           Upcoming Events
         </h2>
         {upcoming.length === 0 ? (
@@ -63,7 +63,7 @@ export default async function EventsPage() {
                       <Badge variant="outline">Virtual</Badge>
                     )}
                   </div>
-                  <h3 className="mt-3 font-semibold text-altus-navy">
+                  <h3 className="mt-3 font-semibold text-altus-charcoal">
                     {event.title}
                   </h3>
                   {event.description && (
@@ -108,7 +108,7 @@ export default async function EventsPage() {
 
       {past.length > 0 && (
         <section>
-          <h2 className="mb-4 text-lg font-semibold text-altus-navy">
+          <h2 className="mb-4 text-lg font-semibold text-altus-charcoal">
             Past Events
           </h2>
           <div className="grid gap-4 md:grid-cols-2">
@@ -116,7 +116,7 @@ export default async function EventsPage() {
               <Card key={event.id} className="opacity-60">
                 <CardContent className="p-5">
                   <Badge variant="outline">{event.type}</Badge>
-                  <h3 className="mt-3 font-semibold text-altus-navy">
+                  <h3 className="mt-3 font-semibold text-altus-charcoal">
                     {event.title}
                   </h3>
                   <p className="mt-2 text-xs text-altus-slate">

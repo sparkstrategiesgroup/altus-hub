@@ -48,9 +48,9 @@ export default function ProfilePage() {
   return (
     <div className="mx-auto max-w-2xl space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-altus-navy">Profile</h1>
+        <h1 className="text-2xl font-bold text-altus-charcoal">Profile</h1>
         <p className="text-sm text-altus-slate">
-          Manage your Altus Forum profile
+          Manage your Altus Collective profile
         </p>
       </div>
 
@@ -64,7 +64,7 @@ export default function ProfilePage() {
             className="h-16 w-16 text-xl"
           />
           <div>
-            <h2 className="text-lg font-semibold text-altus-navy">
+            <h2 className="text-lg font-semibold text-altus-charcoal">
               {session?.user?.name}
             </h2>
             <p className="text-sm text-altus-slate">{session?.user?.email}</p>

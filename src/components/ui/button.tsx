@@ -11,12 +11,12 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-altus-navy text-white hover:bg-altus-navy-light active:bg-altus-navy-dark",
+    "bg-altus-charcoal text-white hover:bg-altus-charcoal-light active:bg-altus-charcoal-dark",
   secondary:
-    "bg-altus-light-gray text-altus-navy hover:bg-altus-border active:bg-gray-300",
+    "bg-altus-light-gray text-altus-charcoal hover:bg-altus-border active:bg-gray-300",
   outline:
-    "border-2 border-altus-navy text-altus-navy hover:bg-altus-navy hover:text-white",
-  ghost: "text-altus-navy hover:bg-altus-light-gray active:bg-altus-border",
+    "border-2 border-altus-charcoal text-altus-charcoal hover:bg-altus-charcoal hover:text-white",
+  ghost: "text-altus-charcoal hover:bg-altus-light-gray active:bg-altus-border",
   gold: "bg-altus-gold text-white hover:bg-altus-gold-light active:bg-altus-gold-dark",
 };
 
@@ -32,7 +32,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={cn(
-          "inline-flex items-center justify-center rounded-lg font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-altus-navy disabled:pointer-events-none disabled:opacity-50",
+          "inline-flex items-center justify-center rounded-lg font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-altus-charcoal disabled:pointer-events-none disabled:opacity-50",
           variantStyles[variant],
           sizeStyles[size],
           className

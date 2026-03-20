@@ -32,7 +32,7 @@ export default async function ResourcesPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-altus-navy">Resources</h1>
+        <h1 className="text-2xl font-bold text-altus-charcoal">Resources</h1>
         <p className="text-sm text-altus-slate">
           Session recordings, documents, and curated resources
         </p>
@@ -45,7 +45,7 @@ export default async function ResourcesPage() {
             key={f.value}
             className={`cursor-pointer rounded-full px-3 py-1 text-sm font-medium transition-colors ${
               f.value === "all"
-                ? "bg-altus-navy text-white"
+                ? "bg-altus-charcoal text-white"
                 : "bg-altus-light-gray text-altus-slate hover:bg-altus-border"
             }`}
           >
@@ -82,7 +82,7 @@ export default async function ResourcesPage() {
                         <Icon className="h-5 w-5 text-altus-gold" />
                       </div>
                       <div className="min-w-0">
-                        <h3 className="font-semibold text-altus-navy truncate">
+                        <h3 className="font-semibold text-altus-charcoal truncate">
                           {r.title}
                         </h3>
                         {r.description && (

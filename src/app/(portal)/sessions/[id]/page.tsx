@@ -49,7 +49,7 @@ export default async function SessionDetailPage({
             {forumSession.status}
           </Badge>
         </div>
-        <h1 className="text-2xl font-bold text-altus-navy">
+        <h1 className="text-2xl font-bold text-altus-charcoal">
           {forumSession.title}
         </h1>
         {forumSession.description && (
@@ -114,7 +114,7 @@ export default async function SessionDetailPage({
                       className="flex items-center gap-2 rounded-lg p-2 text-sm hover:bg-altus-light-gray transition-colors"
                     >
                       <BookOpen size={16} className="text-altus-gold" />
-                      <span className="text-altus-navy">{r.title}</span>
+                      <span className="text-altus-charcoal">{r.title}</span>
                       <Badge variant="outline" className="ml-auto">
                         {r.type}
                       </Badge>
@@ -162,7 +162,7 @@ export default async function SessionDetailPage({
                         src={r.user.image}
                         size="sm"
                       />
-                      <span className="text-sm text-altus-navy">
+                      <span className="text-sm text-altus-charcoal">
                         {r.user.name}
                       </span>
                     </div>

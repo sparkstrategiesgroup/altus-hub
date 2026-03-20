@@ -43,14 +43,14 @@ export default function ContactPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-altus-navy py-20 sm:py-28">
+      <section className="bg-altus-charcoal py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-4xl font-bold text-white sm:text-5xl">
               Get in <span className="text-altus-gold">Touch</span>
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-white/70">
-              Interested in learning more about the Altus Forum? Have questions
+              Interested in learning more about the Altus Collective? Have questions
               about membership? We&apos;d love to hear from you.
             </p>
           </div>
@@ -62,11 +62,11 @@ export default function ContactPage() {
           <div className="grid gap-12 lg:grid-cols-5">
             {/* Contact Info */}
             <div className="lg:col-span-2">
-              <h2 className="text-2xl font-bold text-altus-navy">
+              <h2 className="text-2xl font-bold text-altus-charcoal">
                 Contact Information
               </h2>
               <p className="mt-4 text-altus-slate">
-                Reach out to the Altus Forum team. We typically respond within one
+                Reach out to the Altus Collective team. We typically respond within one
                 business day.
               </p>
 
@@ -76,9 +76,9 @@ export default function ContactPage() {
                     <Mail className="h-5 w-5 text-altus-gold" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-altus-navy">Email</p>
+                    <p className="text-sm font-medium text-altus-charcoal">Email</p>
                     <p className="text-sm text-altus-slate">
-                      info@altusforum.com
+                      info@altuscollective.com
                     </p>
                   </div>
                 </div>
@@ -87,7 +87,7 @@ export default function ContactPage() {
                     <Phone className="h-5 w-5 text-altus-gold" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-altus-navy">Phone</p>
+                    <p className="text-sm font-medium text-altus-charcoal">Phone</p>
                     <p className="text-sm text-altus-slate">(555) 123-4567</p>
                   </div>
                 </div>
@@ -96,7 +96,7 @@ export default function ContactPage() {
                     <MapPin className="h-5 w-5 text-altus-gold" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-altus-navy">
+                    <p className="text-sm font-medium text-altus-charcoal">
                       Location
                     </p>
                     <p className="text-sm text-altus-slate">
@@ -114,7 +114,7 @@ export default function ContactPage() {
                   <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-altus-success/10">
                     <Mail className="h-6 w-6 text-altus-success" />
                   </div>
-                  <h3 className="mt-4 text-lg font-semibold text-altus-navy">
+                  <h3 className="mt-4 text-lg font-semibold text-altus-charcoal">
                     Message Sent
                   </h3>
                   <p className="mt-2 text-sm text-altus-slate">

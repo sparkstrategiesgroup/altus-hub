@@ -1,111 +1,67 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
 import { Avatar } from "@/components/ui/avatar";
-import { Linkedin } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Principals",
+  title: "Principals & Team",
   description:
-    "Meet the Altus Principals — recognized industry leaders who guide the Altus Forum sessions.",
+    "Meet the Altus Principals and the Altus Team — the leaders who guide the ISSA | Altus Collective.",
 };
-
-const disciplines = [
-  "All",
-  "Sales & Marketing",
-  "Strategy",
-  "Technology",
-  "Operations",
-  "Human Resources",
-  "Finance",
-] as const;
 
 const principals = [
   {
-    name: "Sarah Mitchell",
-    slug: "sarah-mitchell",
-    title: "Principal, Sales & Marketing",
-    discipline: "Sales & Marketing",
-    company: "CleanPro National Services",
-    bio: "With 20+ years driving revenue growth in the BSC industry, Sarah has built and scaled sales organizations from startup to $100M+. She specializes in consultative selling, key account management, and building high-performance sales teams.",
+    name: "Jill Frey",
+    slug: "jill-frey",
+    title: "President & CEO",
+    bio: "Jill brings executive leadership and strategic vision to the Altus Collective. As President & CEO, she drives the direction of the community and ensures every initiative serves the needs of BSC leaders nationwide.",
   },
   {
-    name: "David Chen",
-    slug: "david-chen",
-    title: "Principal, Strategy",
-    discipline: "Strategy",
-    company: "Apex Facility Solutions",
-    bio: "David brings a strategic lens to every business challenge. As CEO of Apex Facility Solutions, he has led multiple acquisitions and market expansions, turning a regional player into a national platform in under a decade.",
+    name: "Steve Mastin",
+    slug: "steve-mastin",
+    title: "Chief Financial Officer",
+    bio: "Steve brings deep financial expertise to the Altus community. His guidance on financial strategy, margin optimization, and sustainable growth helps BSC leaders make smarter decisions for their businesses.",
   },
   {
-    name: "Maria Rodriguez",
-    slug: "maria-rodriguez",
-    title: "Principal, Technology",
-    discipline: "Technology",
-    company: "BrightClean Technologies",
-    bio: "Maria is at the forefront of technology adoption in the cleaning industry. She has implemented IoT-based quality assurance systems, workforce management platforms, and data-driven operations that have transformed service delivery.",
+    name: "Chase Carlson",
+    slug: "chase-carlson",
+    title: "Chief Executive Officer & President",
+    bio: "Chase combines operational excellence with visionary leadership. As CEO & President, he works to build meaningful connections and deliver practical value to BSC operators across every Altus Level.",
   },
   {
-    name: "James Walker",
-    slug: "james-walker",
-    title: "Principal, Operations",
-    discipline: "Operations",
-    company: "Walker Building Services",
-    bio: "A second-generation BSC leader, James has modernized his family's operations from a single-market company to a multi-state enterprise. He is known for his systematic approach to operational excellence and quality management.",
+    name: "Ricky Regalado",
+    slug: "ricky-regalado",
+    title: "Chief Executive Officer & Founder",
+    bio: "Ricky is the driving force behind the Altus Collective. As CEO & Founder, he created the community to give BSC leaders a trusted space to learn, grow, and elevate the profession — built by BSCs, for BSCs.",
   },
-  {
-    name: "Angela Foster",
-    slug: "angela-foster",
-    title: "Principal, Human Resources",
-    discipline: "Human Resources",
-    company: "Premier Janitorial Group",
-    bio: "Angela has built some of the industry's most effective talent acquisition and retention programs. Her work on employee engagement, training systems, and culture-building has earned her recognition as a top HR leader in the BSC space.",
-  },
-  {
-    name: "Robert Kim",
-    slug: "robert-kim",
-    title: "Principal, Finance",
-    discipline: "Finance",
-    company: "Summit Cleaning Partners",
-    bio: "Robert brings deep financial expertise to the Altus community. From financial modeling and margin optimization to M&A due diligence, he helps BSC leaders make smarter financial decisions that drive sustainable growth.",
-  },
+];
+
+const team = [
+  { name: "Alejandra Gramajo" },
+  { name: "Jocelyn Rangel" },
+  { name: "Karina Neff" },
+  { name: "Nancy Viazzi" },
 ];
 
 export default function PrincipalsPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-altus-navy py-20 sm:py-28">
+      <section className="bg-altus-charcoal py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="text-4xl font-bold text-white sm:text-5xl">
-              Altus <span className="text-altus-gold">Principals</span>
+            <h1 className="text-4xl font-bold uppercase tracking-wide text-white sm:text-5xl">
+              Altus{" "}
+              <span className="relative inline-block">
+                <span className="text-altus-blue">Principals</span>
+                <span className="absolute bottom-0 left-0 right-0 h-2 bg-altus-blue/40" />
+              </span>
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-white/70">
-              The Altus Forum is led by a select group of industry leaders known
-              as Altus Principals. These individuals are recognized subject matter
-              experts and thought leaders within the building services industry.
+              The ISSA | Altus Collective is led by a select group of industry
+              leaders known as Altus Principals. These individuals bring
+              executive experience and thought leadership to every session and
+              initiative.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Discipline Tags */}
-      <section className="border-b border-altus-border bg-white py-4">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap gap-2">
-            {disciplines.map((d) => (
-              <span
-                key={d}
-                className={`rounded-full px-3 py-1 text-sm font-medium cursor-pointer transition-colors ${
-                  d === "All"
-                    ? "bg-altus-navy text-white"
-                    : "bg-altus-light-gray text-altus-slate hover:bg-altus-border"
-                }`}
-              >
-                {d}
-              </span>
-            ))}
           </div>
         </div>
       </section>
@@ -113,23 +69,23 @@ export default function PrincipalsPage() {
       {/* Principals Grid */}
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <h2 className="text-2xl font-bold uppercase tracking-wide text-altus-charcoal">
+            Meet the Principals
+          </h2>
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
             {principals.map((principal) => (
               <Link
                 key={principal.slug}
                 href={`/principals/${principal.slug}`}
-                className="group rounded-2xl border border-altus-border bg-white p-6 transition-all hover:border-altus-gold/30 hover:shadow-lg"
+                className="group rounded-2xl border border-altus-border bg-white p-6 transition-all hover:border-altus-blue/30 hover:shadow-lg"
               >
                 <div className="flex items-start gap-4">
                   <Avatar name={principal.name} size="lg" />
                   <div className="min-w-0 flex-1">
-                    <h3 className="font-semibold text-altus-navy group-hover:text-altus-gold transition-colors">
+                    <h3 className="font-semibold text-altus-charcoal group-hover:text-altus-blue transition-colors">
                       {principal.name}
                     </h3>
-                    <p className="text-sm text-altus-slate">{principal.company}</p>
-                    <Badge variant="gold" className="mt-2">
-                      {principal.discipline}
-                    </Badge>
+                    <p className="text-sm text-altus-slate">{principal.title}</p>
                   </div>
                 </div>
                 <p className="mt-4 text-sm text-altus-slate leading-relaxed line-clamp-3">
@@ -141,25 +97,55 @@ export default function PrincipalsPage() {
         </div>
       </section>
 
-      {/* How Principals Contribute */}
+      {/* Altus Team */}
       <section className="bg-altus-light-gray py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold uppercase tracking-wide text-altus-charcoal">
+            The Altus{" "}
+            <span className="relative inline-block">
+              <span>Team</span>
+              <span className="absolute bottom-0 left-0 right-0 h-2 bg-altus-blue/40" />
+            </span>
+          </h2>
+          <p className="mt-4 text-altus-slate leading-relaxed max-w-2xl">
+            Behind the scenes, the Altus Team works to deliver an exceptional
+            experience for every member — coordinating sessions, supporting
+            Principals, and keeping the community running smoothly.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+            {team.map((member) => (
+              <div
+                key={member.name}
+                className="flex items-center gap-3 rounded-xl bg-white border border-altus-border p-4"
+              >
+                <Avatar name={member.name} size="sm" />
+                <span className="text-sm font-medium text-altus-charcoal">
+                  {member.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How Principals Contribute */}
+      <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-altus-navy">
+          <h2 className="text-2xl font-bold uppercase tracking-wide text-altus-charcoal">
             How Principals Contribute
           </h2>
           <p className="mt-4 text-altus-slate leading-relaxed">
-            Each Principal represents a key business discipline that drives
-            successful cleaning companies. Throughout the year, the Altus
-            Principals rotate leadership of the monthly forum sessions, sharing
-            their experience, lessons learned, and insights from operating and
-            scaling successful businesses.
+            Each Principal brings executive-level experience to the Altus
+            community. Throughout the year, Principals rotate leadership of the
+            monthly Academy sessions, sharing their experience, lessons learned,
+            and insights from operating and scaling successful BSC businesses.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {["Sales & Marketing", "Strategy", "Technology", "Operations", "Human Resources", "Finance"].map(
               (d) => (
                 <div
                   key={d}
-                  className="rounded-lg bg-white px-4 py-3 text-sm font-medium text-altus-navy shadow-sm"
+                  className="rounded-lg bg-white px-4 py-3 text-sm font-medium text-altus-charcoal shadow-sm"
                 >
                   {d}
                 </div>

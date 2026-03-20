@@ -23,7 +23,7 @@ export default async function PeerGroupsPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-altus-navy">
+        <h1 className="text-2xl font-bold text-altus-charcoal">
           Altus Six Peer Groups
         </h1>
         <p className="text-sm text-altus-slate">
@@ -48,14 +48,14 @@ export default async function PeerGroupsPage() {
               <Card className="h-full hover:border-altus-gold/30 transition-colors">
                 <CardContent className="p-5">
                   <div className="flex items-center justify-between">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-altus-navy">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-altus-charcoal">
                       <Users className="h-5 w-5 text-altus-gold" />
                     </div>
                     <Badge variant="gold">
                       {group.members.length}/{group.maxMembers}
                     </Badge>
                   </div>
-                  <h3 className="mt-3 font-semibold text-altus-navy">
+                  <h3 className="mt-3 font-semibold text-altus-charcoal">
                     {group.name}
                   </h3>
                   {group.description && (

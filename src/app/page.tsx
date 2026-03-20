@@ -3,34 +3,67 @@ import { MarketingNav } from "@/components/marketing/nav";
 import { MarketingFooter } from "@/components/marketing/footer";
 import { Button } from "@/components/ui/button";
 import {
-  Target,
   GraduationCap,
-  TrendingUp,
+  Mountain,
+  BookOpen,
   Users,
   Calendar,
   MessageSquare,
-  BookOpen,
+  Mic,
   ArrowRight,
 } from "lucide-react";
 
-const pillars = [
-  {
-    icon: Target,
-    title: "Engage with Intention",
-    description:
-      "Every conversation at Altus is purposeful. We bring together BSC leaders who are ready to share real-world strategies, ask tough questions, and tackle the challenges that matter most.",
-  },
+const programs = [
   {
     icon: GraduationCap,
-    title: "Empower with Education",
+    title: "Altus Academy",
     description:
-      "Led by recognized industry Principals, each forum session delivers practical insights and lessons learned from operators who have scaled successful cleaning businesses.",
+      "Monthly executive working sessions anchored by an Altus Principal Brief, followed by peer-led unpacking and decision-making in Altus Six breakouts.",
   },
   {
-    icon: TrendingUp,
-    title: "Elevate with Influence",
+    icon: Mountain,
+    title: "Altus Summit",
     description:
-      "Altus members don't just learn — they shape the future of the cleaning industry. Together, we amplify the voice and influence of Building Service Contractors.",
+      "An annual multi-day exchange in Chicago where established and emerging leaders connect through workshops, keynotes, and networking rooted in clarity, connection, and forward momentum.",
+  },
+  {
+    icon: BookOpen,
+    title: "Altus Perspective",
+    description:
+      "Insight reports that advance every member. Real problems, real solutions, and real growth — delivered as actionable intelligence from the Altus community.",
+  },
+  {
+    icon: Mic,
+    title: "Altus Podcast",
+    description:
+      "Conversations with BSC leaders who share what actually works — the strategies, decisions, and lessons that drive real results in the cleaning industry.",
+  },
+];
+
+const tiers = [
+  {
+    name: "Aspire",
+    range: "$0–$1M",
+    spend: "$50K–$150K",
+    description: "Early-stage operators building their foundation",
+  },
+  {
+    name: "Advance",
+    range: "$1M–$5M",
+    spend: "$150K–$500K",
+    description: "Growing companies optimizing systems and scalability",
+  },
+  {
+    name: "Achieve",
+    range: "$5M–$20M",
+    spend: "$500K–$2M+",
+    description: "Enterprise platforms making multi-market decisions",
+  },
+  {
+    name: "Ascend",
+    range: "$20M+",
+    spend: "$2M–$10M+",
+    description: "National leaders driving strategic industry influence",
   },
 ];
 
@@ -39,26 +72,32 @@ const features = [
     icon: Users,
     title: "Altus Six Peer Groups",
     description:
-      "Small peer groups organized by company size and sales volume, so you engage with leaders facing similar challenges.",
+      "Peer groups aligned by Altus Level — Aspire, Advance, Achieve, Ascend — so you engage with leaders at a similar stage of growth.",
   },
   {
     icon: Calendar,
-    title: "Monthly Forum Sessions",
+    title: "Monthly Academy Sessions",
     description:
-      "Structured sessions led by industry Principals, combining thought leadership with collaborative peer discussion.",
+      "45-minute Principal-Led insights followed by 45-minute peer group breakouts for application, challenges, and next steps.",
   },
   {
     icon: MessageSquare,
     title: "Community Discussions",
     description:
-      "Ongoing conversations across key business disciplines — from sales and operations to technology and strategy.",
+      "Ongoing conversations across Operations, Finance, Tech, Sales & Marketing, HR, and Strategy.",
   },
   {
     icon: BookOpen,
-    title: "Resources Library",
+    title: "Resources & Insights",
     description:
-      "Access session recordings, presentations, and curated resources from the Altus community.",
+      "Session recordings, Principal Briefs, Perspective reports, and curated resources from the Altus community.",
   },
+];
+
+const stats = [
+  { value: "50.4%", label: "are $5M+ organizations" },
+  { value: "1 in 4", label: "is a $20M+ organization" },
+  { value: "1 in 2", label: "controls enterprise-level spend" },
 ];
 
 export default function HomePage() {
@@ -67,27 +106,29 @@ export default function HomePage() {
       <MarketingNav />
       <main className="flex-1">
         {/* Hero */}
-        <section className="relative overflow-hidden bg-altus-navy">
-          <div className="absolute inset-0 bg-gradient-to-br from-altus-navy via-altus-navy-light to-altus-navy opacity-90" />
+        <section className="relative overflow-hidden bg-altus-charcoal">
+          <div className="absolute inset-0 bg-gradient-to-br from-altus-charcoal-dark via-altus-charcoal to-altus-charcoal-light opacity-90" />
           <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-40">
             <div className="max-w-3xl">
-              <div className="mb-6 inline-flex items-center rounded-full border border-altus-gold/30 bg-altus-gold/10 px-4 py-1.5 text-sm text-altus-gold">
-                A Leadership Community for BSC Executives
+              <div className="mb-6 inline-flex items-center gap-2 text-sm tracking-widest text-altus-blue uppercase">
+                ISSA | Altus Collective
               </div>
-              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                Where Industry Leaders{" "}
-                <span className="text-altus-gold">Rise Together</span>
+              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl uppercase">
+                Where the Industry{" "}
+                <span className="relative">
+                  <span className="relative z-10">Rises Together</span>
+                  <span className="absolute bottom-1 left-0 right-0 h-3 bg-altus-blue/30 -z-0" />
+                </span>
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/70">
-                The Altus Forum brings together Building Service Contractor
-                executives who are committed to strengthening their businesses and
-                advancing the cleaning industry through purposeful dialogue, peer
-                collaboration, and thought leadership.
+                The Altus Collective is a curated leadership ecosystem within ISSA,
+                designed to bring clarity, connection, and momentum to the Building
+                Service Contractor community. Built by BSCs, for BSCs.
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
                 <Link href="/register">
-                  <Button variant="gold" size="lg">
-                    Join the Forum
+                  <Button variant="primary" size="lg" className="bg-white text-altus-charcoal hover:bg-altus-blue-light">
+                    Join the Collective
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
@@ -105,33 +146,57 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Pillars */}
+        {/* What is Altus */}
         <section className="py-20 sm:py-28">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h2 className="text-3xl font-bold text-altus-navy sm:text-4xl">
-                Three Pillars of Altus
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-3xl font-bold text-altus-charcoal sm:text-4xl uppercase tracking-wide">
+                What is{" "}
+                <span className="relative inline-block">
+                  <span>Altus</span>
+                  <span className="absolute bottom-0 left-0 right-0 h-2 bg-altus-blue/40" />
+                </span>
+                ?
               </h2>
-              <p className="mx-auto mt-4 max-w-2xl text-altus-slate">
-                Every aspect of the Altus Forum is guided by these core principles,
-                ensuring discussions are purposeful, practical, and focused on
-                meaningful industry impact.
+              <p className="mt-6 text-altus-slate leading-relaxed">
+                Altus is a community for Building Service Contractors, built by BSCs,
+                for BSCs. Through Altus Academy, Altus Principals, the Altus Podcast,
+                and Altus Summit, the Collective transforms expertise into shared
+                understanding, and understanding into better decisions — at scale.
+              </p>
+              <p className="mt-4 text-sm text-altus-slate/70 italic">
+                ALTUS | Latin. To rise; deep, noble. It holds both height and
+                depth — elevating your work, always grounded in purpose.
               </p>
             </div>
-            <div className="mt-16 grid gap-8 md:grid-cols-3">
-              {pillars.map((pillar) => (
+          </div>
+        </section>
+
+        {/* Programs */}
+        <section className="bg-altus-light-gray py-20 sm:py-28">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold text-altus-charcoal sm:text-4xl uppercase tracking-wide">
+                The Altus Ecosystem
+              </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-altus-slate">
+                Four programs designed to move the BSC industry forward — together.
+              </p>
+            </div>
+            <div className="mt-16 grid gap-6 sm:grid-cols-2">
+              {programs.map((program) => (
                 <div
-                  key={pillar.title}
-                  className="group rounded-2xl border border-altus-border bg-white p-8 transition-all hover:border-altus-gold/30 hover:shadow-lg"
+                  key={program.title}
+                  className="group rounded-2xl border border-altus-border bg-white p-8 transition-all hover:border-altus-blue hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-altus-gold/10">
-                    <pillar.icon className="h-6 w-6 text-altus-gold" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-altus-blue/20">
+                    <program.icon className="h-6 w-6 text-altus-charcoal" />
                   </div>
-                  <h3 className="mt-5 text-xl font-semibold text-altus-navy">
-                    {pillar.title}
+                  <h3 className="mt-5 text-xl font-semibold text-altus-charcoal uppercase tracking-wide">
+                    {program.title}
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-altus-slate">
-                    {pillar.description}
+                    {program.description}
                   </p>
                 </div>
               ))}
@@ -139,16 +204,81 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Features */}
+        {/* Member Composition */}
+        <section className="py-20 sm:py-28">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold text-altus-charcoal sm:text-4xl uppercase tracking-wide">
+                Member{" "}
+                <span className="relative inline-block">
+                  <span>Composition</span>
+                  <span className="absolute bottom-0 left-0 right-0 h-2 bg-altus-blue/40" />
+                </span>
+              </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-altus-slate">
+                Altus has near-equal representation across all growth stages,
+                enabling peer-to-peer credibility, upward influence, and
+                long-term partnerships.
+              </p>
+            </div>
+
+            {/* Stats */}
+            <div className="mt-12 grid gap-4 sm:grid-cols-3">
+              {stats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="rounded-2xl bg-altus-blue/10 p-6 text-center"
+                >
+                  <p className="text-3xl font-bold text-altus-charcoal">
+                    {stat.value}
+                  </p>
+                  <p className="mt-1 text-sm text-altus-slate">
+                    of Altus members {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Tiers */}
+            <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {tiers.map((tier) => (
+                <div
+                  key={tier.name}
+                  className="rounded-2xl border border-altus-border bg-white p-6"
+                >
+                  <h3 className="text-lg font-bold text-altus-charcoal uppercase tracking-wide">
+                    {tier.name}
+                  </h3>
+                  <p className="text-sm font-medium text-altus-blue-dark">
+                    ({tier.range})
+                  </p>
+                  <div className="mt-3 border-t border-altus-border pt-3">
+                    <p className="text-xs text-altus-slate uppercase tracking-wide">
+                      Annual Controlled Spend
+                    </p>
+                    <p className="text-sm font-semibold text-altus-charcoal">
+                      {tier.spend}
+                    </p>
+                  </div>
+                  <p className="mt-3 text-xs text-altus-slate">
+                    {tier.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Digital Hub Features */}
         <section className="bg-altus-light-gray py-20 sm:py-28">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h2 className="text-3xl font-bold text-altus-navy sm:text-4xl">
+              <h2 className="text-3xl font-bold text-altus-charcoal sm:text-4xl uppercase tracking-wide">
                 Your Digital Hub
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-altus-slate">
-                The Altus platform extends the forum experience beyond monthly
-                sessions, giving members tools to connect, learn, and grow year-round.
+                The Altus platform extends the experience beyond sessions,
+                giving members tools to connect, learn, and grow year-round.
               </p>
             </div>
             <div className="mt-16 grid gap-6 sm:grid-cols-2">
@@ -157,11 +287,11 @@ export default function HomePage() {
                   key={feature.title}
                   className="flex gap-4 rounded-xl border border-altus-border bg-white p-6"
                 >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-altus-navy">
-                    <feature.icon className="h-5 w-5 text-altus-gold" />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-altus-charcoal">
+                    <feature.icon className="h-5 w-5 text-altus-blue" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-altus-navy">
+                    <h3 className="font-semibold text-altus-charcoal">
                       {feature.title}
                     </h3>
                     <p className="mt-1 text-sm text-altus-slate">
@@ -177,18 +307,18 @@ export default function HomePage() {
         {/* CTA */}
         <section className="py-20 sm:py-28">
           <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-altus-navy sm:text-4xl">
-              Ready to Elevate Your Leadership?
+            <h2 className="text-3xl font-bold text-altus-charcoal sm:text-4xl uppercase tracking-wide">
+              Ready to Rise?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-altus-slate">
-              Join a select community of BSC executives who are learning from one
-              another, exchanging real-world strategies, and shaping the future of
-              the cleaning industry.
+              Join a community where BSC leaders learn from one another,
+              exchange real-world strategies, and shape the future of the
+              cleaning industry — together.
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Link href="/register">
-                <Button variant="gold" size="lg">
-                  Apply to Join
+                <Button variant="primary" size="lg">
+                  Join the Collective
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
