@@ -114,7 +114,7 @@ export default function MessagesPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-altus-navy">Messages</h1>
+        <h1 className="text-2xl font-bold text-altus-charcoal">Messages</h1>
         <p className="text-sm text-altus-slate">
           Direct messages with fellow Altus members
         </p>
@@ -154,7 +154,7 @@ export default function MessagesPage() {
                       />
                       <div className="min-w-0 flex-1">
                         <div className="flex items-center justify-between">
-                          <span className="text-sm font-medium text-altus-navy truncate">
+                          <span className="text-sm font-medium text-altus-charcoal truncate">
                             {user.name}
                           </span>
                           {unread > 0 && (
@@ -203,8 +203,8 @@ export default function MessagesPage() {
                         <div
                           className={`max-w-[70%] rounded-xl px-4 py-2.5 text-sm ${
                             isMe
-                              ? "bg-altus-navy text-white"
-                              : "bg-altus-light-gray text-altus-navy"
+                              ? "bg-altus-charcoal text-white"
+                              : "bg-altus-light-gray text-altus-charcoal"
                           }`}
                         >
                           {msg.content}

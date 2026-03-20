@@ -83,7 +83,7 @@ export default function RegisterPage() {
   return (
     <Card className="w-full max-w-lg">
       <CardHeader className="text-center">
-        <CardTitle className="text-2xl">Join the Altus Forum</CardTitle>
+        <CardTitle className="text-2xl">Join the Altus Collective</CardTitle>
         <CardDescription>
           Create your account to connect with BSC leaders
         </CardDescription>
@@ -139,14 +139,14 @@ export default function RegisterPage() {
             <div className="space-y-1.5">
               <label
                 htmlFor="companySize"
-                className="block text-sm font-medium text-altus-navy"
+                className="block text-sm font-medium text-altus-charcoal"
               >
                 Company Size
               </label>
               <select
                 id="companySize"
                 name="companySize"
-                className="w-full rounded-lg border border-altus-border bg-white px-3.5 py-2.5 text-sm text-altus-navy focus:border-altus-gold focus:outline-none focus:ring-2 focus:ring-altus-gold/20"
+                className="w-full rounded-lg border border-altus-border bg-white px-3.5 py-2.5 text-sm text-altus-charcoal focus:border-altus-gold focus:outline-none focus:ring-2 focus:ring-altus-gold/20"
               >
                 <option value="">Select size</option>
                 {companySizes.map((size) => (
@@ -159,14 +159,14 @@ export default function RegisterPage() {
             <div className="space-y-1.5">
               <label
                 htmlFor="salesVolume"
-                className="block text-sm font-medium text-altus-navy"
+                className="block text-sm font-medium text-altus-charcoal"
               >
                 Annual Sales Volume
               </label>
               <select
                 id="salesVolume"
                 name="salesVolume"
-                className="w-full rounded-lg border border-altus-border bg-white px-3.5 py-2.5 text-sm text-altus-navy focus:border-altus-gold focus:outline-none focus:ring-2 focus:ring-altus-gold/20"
+                className="w-full rounded-lg border border-altus-border bg-white px-3.5 py-2.5 text-sm text-altus-charcoal focus:border-altus-gold focus:outline-none focus:ring-2 focus:ring-altus-gold/20"
               >
                 <option value="">Select volume</option>
                 {salesVolumes.map((vol) => (

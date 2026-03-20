@@ -32,7 +32,7 @@ export default async function DiscussionsPage() {
     <div className="space-y-6">
       <div className="flex items-start justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-altus-navy">Discussions</h1>
+          <h1 className="text-2xl font-bold text-altus-charcoal">Discussions</h1>
           <p className="text-sm text-altus-slate">
             Connect with fellow BSC leaders across business topics
           </p>
@@ -52,7 +52,7 @@ export default async function DiscussionsPage() {
             key={cat.value}
             className={`cursor-pointer rounded-full px-3 py-1 text-sm font-medium transition-colors ${
               cat.value === "all"
-                ? "bg-altus-navy text-white"
+                ? "bg-altus-charcoal text-white"
                 : "bg-altus-light-gray text-altus-slate hover:bg-altus-border"
             }`}
           >
@@ -91,7 +91,7 @@ export default async function DiscussionsPage() {
                       {d.isPinned && (
                         <Pin size={14} className="text-altus-gold" />
                       )}
-                      <h3 className="font-semibold text-altus-navy truncate">
+                      <h3 className="font-semibold text-altus-charcoal truncate">
                         {d.title}
                       </h3>
                     </div>

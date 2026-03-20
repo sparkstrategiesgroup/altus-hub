@@ -29,7 +29,7 @@ export const CardTitle = forwardRef<
 >(({ className, ...props }, ref) => (
   <h3
     ref={ref}
-    className={cn("text-lg font-semibold text-altus-navy", className)}
+    className={cn("text-lg font-semibold text-altus-charcoal", className)}
     {...props}
   />
 ));

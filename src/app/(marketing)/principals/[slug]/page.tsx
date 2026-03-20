@@ -1,71 +1,42 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Badge } from "@/components/ui/badge";
 import { Avatar } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 
 const principals = [
   {
-    name: "Sarah Mitchell",
-    slug: "sarah-mitchell",
-    title: "Principal, Sales & Marketing",
-    discipline: "Sales & Marketing",
-    company: "CleanPro National Services",
-    bio: "With 20+ years driving revenue growth in the BSC industry, Sarah has built and scaled sales organizations from startup to $100M+. She specializes in consultative selling, key account management, and building high-performance sales teams.",
+    name: "Jill Frey",
+    slug: "jill-frey",
+    title: "President & CEO",
+    bio: "Jill brings executive leadership and strategic vision to the Altus Collective. As President & CEO, she drives the direction of the community and ensures every initiative serves the needs of BSC leaders nationwide.",
     fullBio:
-      "Sarah Mitchell is one of the BSC industry's most respected sales and marketing leaders. Over two decades, she has built and scaled sales organizations from startup operations to enterprises exceeding $100M in annual revenue. Her expertise spans consultative selling, key account strategy, proposal development, and building high-performance sales teams.\n\nAs a Principal of the Altus Forum, Sarah brings a practitioner's perspective to every discussion — sharing what actually works in the field, not just what sounds good in theory. Her sessions focus on real sales challenges facing BSC companies: winning competitive bids, retaining key accounts, building referral engines, and developing sales leaders from within.",
+      "Jill Frey serves as President & CEO of the ISSA | Altus Collective, bringing executive leadership and strategic vision to the community. Under her guidance, Altus has grown into a trusted space where BSC leaders come together to learn, collaborate, and elevate the profession.\n\nJill is deeply committed to ensuring that every Altus initiative — from Academy sessions to the annual Summit — delivers practical, actionable value to members. Her leadership style is grounded in listening to the community and building programs that reflect the real challenges and opportunities facing Building Service Contractors today.",
   },
   {
-    name: "David Chen",
-    slug: "david-chen",
-    title: "Principal, Strategy",
-    discipline: "Strategy",
-    company: "Apex Facility Solutions",
-    bio: "David brings a strategic lens to every business challenge. As CEO of Apex Facility Solutions, he has led multiple acquisitions and market expansions.",
+    name: "Steve Mastin",
+    slug: "steve-mastin",
+    title: "Chief Financial Officer",
+    bio: "Steve brings deep financial expertise to the Altus community. His guidance on financial strategy, margin optimization, and sustainable growth helps BSC leaders make smarter decisions for their businesses.",
     fullBio:
-      "David Chen is a strategic thinker and proven operator who has transformed Apex Facility Solutions from a regional player into a national platform through organic growth and strategic acquisitions. His approach to strategy is grounded in financial discipline, market analysis, and operational reality.\n\nAs an Altus Principal, David leads discussions on strategic planning, market positioning, competitive analysis, and growth through acquisition. He challenges members to think beyond their day-to-day operations and build businesses that can compete and win at any scale.",
+      "Steve Mastin serves as Chief Financial Officer of the ISSA | Altus Collective. He brings deep financial acumen and a practical understanding of the economics of running a successful Building Service Contracting business.\n\nSteve's expertise spans financial strategy, margin optimization, cash flow management, and the financial planning required to scale service-based businesses. Within the Altus community, he helps members think critically about the financial foundations of their companies — ensuring they build businesses that are not just growing, but growing profitably and sustainably.",
   },
   {
-    name: "Maria Rodriguez",
-    slug: "maria-rodriguez",
-    title: "Principal, Technology",
-    discipline: "Technology",
-    company: "BrightClean Technologies",
-    bio: "Maria is at the forefront of technology adoption in the cleaning industry.",
+    name: "Chase Carlson",
+    slug: "chase-carlson",
+    title: "Chief Executive Officer & President",
+    bio: "Chase combines operational excellence with visionary leadership. As CEO & President, he works to build meaningful connections and deliver practical value to BSC operators across every Altus Level.",
     fullBio:
-      "Maria Rodriguez is a technology innovator in the building services space. She has implemented IoT-based quality assurance systems, deployed AI-powered workforce scheduling, and built data analytics platforms that give cleaning companies real-time visibility into their operations.\n\nAs an Altus Principal, Maria helps BSC leaders evaluate and adopt technology that delivers measurable ROI — not just shiny tools. Her sessions cover workforce management platforms, customer-facing technology, operational analytics, and building a technology roadmap that scales with your business.",
+      "Chase Carlson serves as Chief Executive Officer & President of the ISSA | Altus Collective. He combines operational excellence with visionary leadership, working to build meaningful connections and deliver practical value to BSC operators across every Altus Level.\n\nChase is passionate about creating experiences that bring BSC leaders together in ways that are both productive and transformative. Whether through monthly Academy sessions, the annual Summit in Chicago, or the day-to-day community platform, Chase ensures that Altus remains a space where operators can speak openly, challenge one another, and grow together.",
   },
   {
-    name: "James Walker",
-    slug: "james-walker",
-    title: "Principal, Operations",
-    discipline: "Operations",
-    company: "Walker Building Services",
-    bio: "A second-generation BSC leader who has modernized his family's operations into a multi-state enterprise.",
+    name: "Ricky Regalado",
+    slug: "ricky-regalado",
+    title: "Chief Executive Officer & Founder",
+    bio: "Ricky is the driving force behind the Altus Collective. As CEO & Founder, he created the community to give BSC leaders a trusted space to learn, grow, and elevate the profession — built by BSCs, for BSCs.",
     fullBio:
-      "James Walker represents the best of the BSC industry's next generation. Taking the reins of his family's cleaning business, he modernized operations from the ground up — implementing standardized processes, quality management systems, and operational metrics that drove consistent, scalable growth.\n\nAs an Altus Principal, James focuses on the operational engine that powers every successful BSC company. His sessions cover workforce management, quality assurance, supply chain optimization, account startups, and building operational systems that deliver consistent results across multiple markets.",
-  },
-  {
-    name: "Angela Foster",
-    slug: "angela-foster",
-    title: "Principal, Human Resources",
-    discipline: "Human Resources",
-    company: "Premier Janitorial Group",
-    bio: "Angela has built some of the industry's most effective talent acquisition and retention programs.",
-    fullBio:
-      "Angela Foster has spent her career solving the BSC industry's biggest challenge: people. She has designed and implemented talent acquisition pipelines, employee engagement programs, training systems, and retention strategies that have dramatically reduced turnover and improved service quality.\n\nAs an Altus Principal, Angela brings a people-first perspective to every discussion. Her sessions cover recruitment strategies, onboarding best practices, leadership development, employee engagement, compliance, and building a culture that attracts and retains top talent in a competitive labor market.",
-  },
-  {
-    name: "Robert Kim",
-    slug: "robert-kim",
-    title: "Principal, Finance",
-    discipline: "Finance",
-    company: "Summit Cleaning Partners",
-    bio: "Robert brings deep financial expertise to the Altus community.",
-    fullBio:
-      "Robert Kim combines deep financial acumen with hands-on BSC industry experience. He has guided companies through financial restructuring, M&A transactions, equity raises, and the complex financial planning required to scale a service-based business.\n\nAs an Altus Principal, Robert demystifies finance for BSC operators. His sessions cover financial modeling, margin analysis, pricing strategy, cash flow management, M&A valuation, and building the financial infrastructure that supports sustainable growth.",
+      "Ricky Regalado is the Chief Executive Officer & Founder of the ISSA | Altus Collective. He created Altus out of a conviction that BSC leaders deserve a community as ambitious and purposeful as the businesses they run — a space built by BSCs, for BSCs.\n\nRicky's vision for Altus was shaped by his own experience as a BSC operator and his belief that the industry's best ideas come from the operators themselves. By partnering with ISSA, he amplified the reach and influence of the Altus Collective, giving Building Service Contractors a powerful platform to learn from one another, shape industry standards, and elevate the profession as a whole. The name Altus — Latin for \"to rise\" — reflects Ricky's founding mission.",
   },
 ];
 
@@ -98,11 +69,11 @@ export default async function PrincipalDetailPage({
 
   return (
     <div>
-      <section className="bg-altus-navy py-16 sm:py-20">
+      <section className="bg-altus-charcoal py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <Link
             href="/principals"
-            className="inline-flex items-center gap-1 text-sm text-white/60 hover:text-altus-gold transition-colors mb-8"
+            className="inline-flex items-center gap-1 text-sm text-white/60 hover:text-altus-blue transition-colors mb-8"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to Principals
@@ -110,13 +81,10 @@ export default async function PrincipalDetailPage({
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
             <Avatar name={principal.name} size="lg" className="h-20 w-20 text-2xl" />
             <div>
-              <h1 className="text-3xl font-bold text-white sm:text-4xl">
+              <h1 className="text-3xl font-bold uppercase tracking-wide text-white sm:text-4xl">
                 {principal.name}
               </h1>
-              <p className="mt-1 text-lg text-white/70">{principal.company}</p>
-              <Badge variant="gold" className="mt-3">
-                {principal.discipline}
-              </Badge>
+              <p className="mt-1 text-lg text-altus-blue">{principal.title}</p>
             </div>
           </div>
         </div>
@@ -133,14 +101,14 @@ export default async function PrincipalDetailPage({
           </div>
 
           <div className="mt-12 rounded-2xl bg-altus-light-gray p-8">
-            <h3 className="text-lg font-semibold text-altus-navy">
-              Area of Expertise
+            <h3 className="text-lg font-semibold uppercase tracking-wide text-altus-charcoal">
+              Role
             </h3>
             <p className="mt-1 text-sm text-altus-slate">{principal.title}</p>
             <div className="mt-6">
               <Link href="/register">
                 <Button variant="gold">
-                  Join to Attend Sessions
+                  Join Altus Collective
                 </Button>
               </Link>
             </div>

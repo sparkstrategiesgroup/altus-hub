@@ -15,7 +15,7 @@ export function PortalTopbar({ onMenuClick }: PortalTopbarProps) {
     <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-altus-border bg-white/95 backdrop-blur px-4 lg:px-6">
       <button
         onClick={onMenuClick}
-        className="p-2 text-altus-slate hover:text-altus-navy lg:hidden"
+        className="p-2 text-altus-slate hover:text-altus-charcoal lg:hidden"
         aria-label="Open menu"
       >
         <Menu size={22} />
@@ -24,7 +24,7 @@ export function PortalTopbar({ onMenuClick }: PortalTopbarProps) {
       <div className="hidden lg:block">
         <h2 className="text-sm font-medium text-altus-slate">
           Welcome back,{" "}
-          <span className="text-altus-navy">
+          <span className="text-altus-charcoal">
             {session?.user?.name || "Member"}
           </span>
         </h2>

@@ -76,14 +76,14 @@ export function CommentSection({
           />
           <div className="flex-1">
             <div className="flex items-center gap-2 text-sm">
-              <span className="font-medium text-altus-navy">
+              <span className="font-medium text-altus-charcoal">
                 {comment.author.name}
               </span>
               <span className="text-xs text-altus-slate">
                 {new Date(comment.createdAt).toLocaleDateString()}
               </span>
             </div>
-            <p className="mt-1 text-sm text-altus-navy/80 whitespace-pre-wrap">
+            <p className="mt-1 text-sm text-altus-charcoal/80 whitespace-pre-wrap">
               {comment.content}
             </p>
             {!isReply && (
