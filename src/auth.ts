@@ -24,13 +24,10 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         }
 
         const { PrismaClient } = await import("@/generated/prisma/client");
-        const { PrismaLibSql } = await import("@prisma/adapter-libsql");
-        const { createClient } = await import("@libsql/client");
+        const { PrismaPg } = await import("@prisma/adapter-pg");
         const bcryptjs = await import("bcryptjs");
 
-        const libsql = createClient({ url: "file:prisma/dev.db" });
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const adapter = new PrismaLibSql(libsql as any);
+        const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL });
         const prisma = new PrismaClient({ adapter });
 
         try {
