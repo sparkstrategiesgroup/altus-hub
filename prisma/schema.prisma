@@ -219,13 +219,13 @@ model EventRsvp {
 model Message {
   id         String   @id @default(cuid())
   content    String
-  senderId   String
-  receiverId String
+  senderId   String?
+  receiverId String?
   isRead     Boolean  @default(false)
   createdAt  DateTime @default(now())
 
-  sender   User @relation("SentMessages", fields: [senderId], references: [id], onDelete: Cascade)
-  receiver User @relation("ReceivedMessages", fields: [receiverId], references: [id], onDelete: Cascade)
+  sender   User? @relation("SentMessages", fields: [senderId], references: [id], onDelete: SetNull)
+  receiver User? @relation("ReceivedMessages", fields: [receiverId], references: [id], onDelete: SetNull)
 }
 
 model ContactSubmission {
