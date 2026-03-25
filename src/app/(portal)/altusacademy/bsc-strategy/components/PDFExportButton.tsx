@@ -69,7 +69,7 @@ export default function PDFExportButton({
       const opt = {
         margin: 10,
         filename: fileName,
-        image: { type: 'jpeg', quality: 0.98 },
+        image: { type: 'jpeg' as const, quality: 0.98 },
         html2canvas: { scale: 2 },
         jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' },
       };
