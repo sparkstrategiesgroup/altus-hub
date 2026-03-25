@@ -108,7 +108,7 @@ export default function AdminPage() {
   // Check authorization
   useEffect(() => {
     if (status === "loading") return;
-    if (status === "unauthenticated" || (session?.user as any)?.role !== "admin") {
+    if (status === "unauthenticated" || session?.user?.role !== "admin") {
       return;
     }
 
@@ -338,7 +338,7 @@ export default function AdminPage() {
     );
   }
 
-  if (status === "unauthenticated" || (session?.user as any)?.role !== "admin") {
+  if (status === "unauthenticated" || session?.user?.role !== "admin") {
     return (
       <div className="rounded-lg border-2 border-altus-error bg-red-50 p-6 text-center">
         <AlertCircle className="mx-auto h-8 w-8 text-altus-error mb-3" />
