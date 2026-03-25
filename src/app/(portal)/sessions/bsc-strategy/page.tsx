@@ -5,7 +5,7 @@
  */
 
 import { redirect } from 'next/navigation';
-import { getServerSession } from 'next-auth/next';
+import { auth } from '@/auth';
 import SessionTimer from './components/SessionTimer';
 import PDFExportButton from './components/PDFExportButton';
 import QASection from './components/QASection';
@@ -18,7 +18,7 @@ export const metadata = {
 };
 
 export default async function BSCStrategyMasterclassPage() {
-  const session = await getServerSession();
+  const session = await auth();
 
   // Redirect to login if not authenticated
   if (!session) {

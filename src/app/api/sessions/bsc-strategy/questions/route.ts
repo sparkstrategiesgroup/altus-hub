@@ -4,7 +4,7 @@
  * Uses Supabase for persistence
  */
 
-import { getServerSession } from 'next-auth/next';
+import { auth } from '@/auth';
 import { NextRequest, NextResponse } from 'next/server';
 
 // Mock database - replace with Supabase in production
@@ -12,7 +12,7 @@ const questionsDB: any[] = [];
 
 export async function GET(request: NextRequest) {
   try {
-    const session = await getServerSession();
+    const session = await auth();
 
     if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
@@ -34,7 +34,7 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
-    const session = await getServerSession();
+    const session = await auth();
 
     if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });

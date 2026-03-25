@@ -5,7 +5,7 @@
  * Prevents duplicate upvotes per user
  */
 
-import { getServerSession } from 'next-auth/next';
+import { auth } from '@/auth';
 import { NextRequest, NextResponse } from 'next/server';
 
 // Mock database - replace with Supabase in production
@@ -16,7 +16,7 @@ export async function POST(
   { params }: { params: { id: string } }
 ) {
   try {
-    const session = await getServerSession();
+    const session = await auth();
 
     if (!session?.user?.email) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
