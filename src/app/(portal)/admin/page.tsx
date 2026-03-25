@@ -108,7 +108,7 @@ export default function AdminPage() {
   // Check authorization
   useEffect(() => {
     if (status === "loading") return;
-    if (status === "unauthenticated" || session?.user?.role !== "admin") {
+    if (status === "unauthenticated" || (session?.user as any)?.role !== "admin") {
       return;
     }
 
