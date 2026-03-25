@@ -18,7 +18,7 @@ interface ScheduleSegment {
 }
 
 interface MasterclassScheduleProps {
-  segments: ScheduleSegment[];
+  segments?: ScheduleSegment[];
   currentTime?: number;
   onSegmentClick?: (segmentId: string) => void;
 }
