@@ -21,17 +21,17 @@ const marketSizeData = [
 ];
 
 const bscChallengesData = [
-  { challenge: "Labor / Staffing", pct: 63, color: "#0D9488" },
-  { challenge: "Customer Retention", pct: 58, color: "#0F766E" },
-  { challenge: "Rising Costs / Margins", pct: 52, color: "#14B8A6" },
-  { challenge: "Digital Transformation", pct: 40, color: "#2DD4BF" },
-  { challenge: "Client Expectations", pct: 35, color: "#5EEAD4" },
+  { challenge: "Labor / Staffing", pct: 63, color: "#c4a265" },
+  { challenge: "Customer Retention", pct: 58, color: "#a0834a" },
+  { challenge: "Rising Costs / Margins", pct: 52, color: "#b8d4e3" },
+  { challenge: "Digital Transformation", pct: 40, color: "#d4b88a" },
+  { challenge: "Client Expectations", pct: 35, color: "#d4b88a" },
 ];
 
 const revenueSourceData = [
-  { name: "Ongoing Contracts", value: 53, color: "#0D9488" },
-  { name: "Repeat Customers", value: 40, color: "#14B8A6" },
-  { name: "New Business", value: 7, color: "#D97706" },
+  { name: "Ongoing Contracts", value: 53, color: "#c4a265" },
+  { name: "Repeat Customers", value: 40, color: "#b8d4e3" },
+  { name: "New Business", value: 7, color: "#c4a265" },
 ];
 
 const growthPriorityData = [
@@ -74,7 +74,7 @@ const strategicPillars = [
     number: "01",
     title: "Market Dynamics",
     subtitle: "A $450B industry at a crossroads",
-    color: "teal",
+    color: "gold",
     icon: "📈",
   },
   {
@@ -90,7 +90,7 @@ const strategicPillars = [
     number: "03",
     title: "Digital Transformation",
     subtitle: "Technology as a competitive moat",
-    color: "teal",
+    color: "gold",
     icon: "🤖",
   },
   {
@@ -106,7 +106,7 @@ const strategicPillars = [
     number: "05",
     title: "Growth Strategy",
     subtitle: "Escaping the commodity trap",
-    color: "teal",
+    color: "gold",
     icon: "🚀",
   },
 ];
@@ -159,7 +159,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
       <div className="bg-white border border-gray-200 rounded-lg p-3 shadow-lg text-sm">
         <p className="font-semibold text-gray-800 mb-1">{label}</p>
         {payload.map((entry: any, i: number) => (
-          <p key={i} style={{ color: entry.color || "#0D9488" }}>
+          <p key={i} style={{ color: entry.color || "#c4a265" }}>
             {entry.name}: <span className="font-bold">{entry.value}{entry.unit || ""}</span>
           </p>
         ))}
@@ -235,11 +235,11 @@ function Navigation() {
       <div className="container max-w-6xl mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
-            <span className="section-label text-xs font-semibold tracking-widest" style={{ color: "#0D9488" }}>
-              BSC
+            <span className="section-label text-xs font-semibold tracking-widest" style={{ color: "#c4a265" }}>
+              ALTUS
             </span>
             <span className={`text-sm font-medium transition-colors ${scrolled ? "text-gray-800" : "text-white"}`}>
-              Industry Strategy 2025
+              Collective Masterclass
             </span>
           </div>
           <div className="hidden md:flex items-center gap-1">
@@ -254,7 +254,7 @@ function Navigation() {
                     ? "text-gray-600 hover:text-gray-900"
                     : "text-white/80 hover:text-white"
                 }`}
-                style={active === item.id ? { backgroundColor: "#0D9488" } : {}}
+                style={active === item.id ? { backgroundColor: "#c4a265" } : {}}
               >
                 {item.label}
               </a>
@@ -284,12 +284,12 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-gray-950/90 via-gray-900/50 to-gray-900/20" />
         <div className="relative container max-w-6xl mx-auto px-4 md:px-8 pb-20 pt-32">
           <div className="max-w-3xl">
-            <p className="section-label text-sm mb-4" style={{ color: "#2DD4BF" }}>
-              BSCAI Industry Strategy Session · 2025
+            <p className="section-label text-sm mb-4" style={{ color: "#d4b88a" }}>
+              Altus Collective Masterclass · 2025
             </p>
             <h1 className="text-white text-5xl md:text-7xl font-bold leading-tight mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
               Building the<br />
-              <span style={{ color: "#2DD4BF" }}>Future BSC</span>
+              <span style={{ color: "#d4b88a" }}>Future BSC</span>
             </h1>
             <p className="text-gray-200 text-xl md:text-2xl leading-relaxed mb-8 max-w-2xl font-light">
               A strategic framework for navigating workforce challenges, digital transformation, and market growth in the janitorial industry.
@@ -327,6 +327,53 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── PRESENTER ── */}
+      <Section className="bg-white border-b border-gray-100">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="flex justify-center">
+            <div className="relative">
+              <div className="w-72 h-72 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-lg border-2 border-gray-100">
+                {/* Replace /uploads/mike-fitts.png with actual headshot */}
+                <img
+                  src="/uploads/mike-fitts.png"
+                  alt="Mike Fitts — Chief Commercial Officer, 4M Building Solutions"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div className="absolute -bottom-4 -right-4 bg-white rounded-xl px-4 py-2 shadow-md border border-gray-100">
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-semibold" style={{ color: "#c4a265" }}>ISSA</span>
+                  <span className="text-gray-300">|</span>
+                  <span className="text-sm font-semibold" style={{ color: "#3a3a3a" }}>Altus Collective</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p className="section-label mb-3">Your Presenter</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
+              Mike Fitts
+            </h2>
+            <p className="text-lg font-medium mb-4" style={{ color: "#c4a265" }}>
+              Chief Commercial Officer — 4M Building Solutions
+            </p>
+            <p className="text-gray-600 text-base leading-relaxed mb-4">
+              Mike Fitts leads commercial strategy at 4M Building Solutions, where he turns market headwinds into momentum for one of the industry's most forward-thinking facility services companies. His expertise spans scaling operations without margin erosion, vendor consolidation, supply chain optimization, and performance-driven partnerships.
+            </p>
+            <p className="text-gray-600 text-base leading-relaxed mb-6">
+              A decorated U.S. Marine Corps veteran — including a Bronze Star with Combat Distinguishing Device — Mike brings the same operational discipline and strategic clarity to the commercial cleaning industry. He is a recognized thought leader on autonomous cleaning technology, facility spend optimization, and building the next-generation BSC.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              {["Commercial Strategy", "Facility Services", "Autonomous Cleaning", "Operational Scale", "Industry Leadership"].map((tag) => (
+                <span key={tag} className="px-3 py-1.5 rounded-full text-xs font-medium border" style={{ borderColor: "#c4a265", color: "#c4a265", backgroundColor: "#faf8f3" }}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Section>
+
       {/* ── SESSION OVERVIEW ── */}
       <Section className="bg-gray-50 border-y border-gray-100">
         <div className="text-center mb-12">
@@ -345,7 +392,7 @@ export default function Home() {
             >
               <div className="text-3xl mb-3">{pillar.icon}</div>
               <div className="section-label text-xs mb-2">{pillar.number}</div>
-              <h3 className="font-bold text-gray-900 text-base mb-1 group-hover:text-teal-700 transition-colors" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <h3 className="font-bold text-gray-900 text-base mb-1 group-hover:text-altus-gold-dark transition-colors" style={{ fontFamily: "'Playfair Display', serif" }}>
                 {pillar.title}
               </h3>
               <p className="text-gray-500 text-sm">{pillar.subtitle}</p>
@@ -357,12 +404,12 @@ export default function Home() {
       {/* ── SECTION 01: MARKET DYNAMICS ── */}
       <Section id="market">
         <div className="flex items-start gap-4 mb-12">
-          <span className="section-label text-5xl font-bold opacity-10 leading-none" style={{ fontFamily: "'Playfair Display', serif", color: "#0D9488" }}>01</span>
+          <span className="section-label text-5xl font-bold opacity-10 leading-none" style={{ fontFamily: "'Playfair Display', serif", color: "#c4a265" }}>01</span>
           <div>
             <p className="section-label mb-2">Market Dynamics</p>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
               A $450 Billion Industry<br />
-              <span style={{ color: "#0D9488" }}>at a Crossroads</span>
+              <span style={{ color: "#c4a265" }}>at a Crossroads</span>
             </h2>
           </div>
         </div>
@@ -394,16 +441,16 @@ export default function Home() {
             <ResponsiveContainer width="100%" height={320}>
               <AreaChart data={marketSizeData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
                 <defs>
-                  <linearGradient id="tealGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#0D9488" stopOpacity={0.2} />
-                    <stop offset="95%" stopColor="#0D9488" stopOpacity={0.02} />
+                  <linearGradient id="goldGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#c4a265" stopOpacity={0.2} />
+                    <stop offset="95%" stopColor="#c4a265" stopOpacity={0.02} />
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
                 <XAxis dataKey="year" tick={{ fontSize: 12, fill: "#6b7280" }} axisLine={false} tickLine={false} />
                 <YAxis tick={{ fontSize: 12, fill: "#6b7280" }} axisLine={false} tickLine={false} unit="B" domain={[280, 680]} />
                 <Tooltip content={<CustomTooltip />} />
-                <Area type="monotone" dataKey="value" stroke="#0D9488" strokeWidth={2.5} fill="url(#tealGrad)" name="Market Size" unit="B USD" dot={{ fill: "#0D9488", r: 4 }} activeDot={{ r: 6 }} />
+                <Area type="monotone" dataKey="value" stroke="#c4a265" strokeWidth={2.5} fill="url(#goldGrad)" name="Market Size" unit="B USD" dot={{ fill: "#c4a265", r: 4 }} activeDot={{ r: 6 }} />
               </AreaChart>
             </ResponsiveContainer>
             <p className="text-xs text-gray-400 mt-2 text-center">E = Estimated projection. Sources: Grand View Research, Fortune Business Insights</p>
@@ -459,21 +506,21 @@ export default function Home() {
       {/* ── SECTION 02: WORKFORCE ── */}
       <Section id="workforce" className="bg-gray-950 text-white">
         <div className="flex items-start gap-4 mb-12">
-          <span className="section-label text-5xl font-bold opacity-10 leading-none" style={{ fontFamily: "'Playfair Display', serif", color: "#D97706" }}>02</span>
+          <span className="section-label text-5xl font-bold opacity-10 leading-none" style={{ fontFamily: "'Playfair Display', serif", color: "#c4a265" }}>02</span>
           <div>
-            <p className="section-label mb-2" style={{ color: "#FCD34D" }}>Workforce Strategy</p>
+            <p className="section-label mb-2" style={{ color: "#d4b88a" }}>Workforce Strategy</p>
             <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
               The #1 Strategic<br />
-              <span style={{ color: "#FCD34D" }}>Challenge: People</span>
+              <span style={{ color: "#d4b88a" }}>Challenge: People</span>
             </h2>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {[
-            { value: 63, suffix: "%", label: "of BSCs cite staffing as their #1 risk factor", color: "#FCD34D" },
+            { value: 63, suffix: "%", label: "of BSCs cite staffing as their #1 risk factor", color: "#d4b88a" },
             { value: 200, suffix: "%+", label: "annual turnover rate in janitorial sector", color: "#F87171" },
-            { value: 1, prefix: "$", suffix: "B", label: "annual industry loss from turnover & vacancies", color: "#FCD34D" },
+            { value: 1, prefix: "$", suffix: "B", label: "annual industry loss from turnover & vacancies", color: "#d4b88a" },
           ].map((stat) => (
             <div key={stat.label} className="bg-gray-800 rounded-xl p-6 border border-gray-700">
               <div className="text-5xl font-bold mb-2" style={{ fontFamily: "'Playfair Display', serif", color: stat.color }}>
@@ -486,7 +533,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mb-12">
           <div>
-            <p className="section-label mb-4" style={{ color: "#5EEAD4" }}>Top BSC Challenges (% of Respondents)</p>
+            <p className="section-label mb-4" style={{ color: "#d4b88a" }}>Top BSC Challenges (% of Respondents)</p>
             <ResponsiveContainer width="100%" height={280}>
               <BarChart data={bscChallengesData} layout="vertical" margin={{ left: 0, right: 20 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#374151" horizontal={false} />
@@ -511,13 +558,13 @@ export default function Home() {
               />
             </div>
             <div className="bg-gray-800 rounded-xl p-5 border border-gray-700">
-              <p className="section-label text-xs mb-2" style={{ color: "#5EEAD4" }}>Root Causes</p>
+              <p className="section-label text-xs mb-2" style={{ color: "#d4b88a" }}>Root Causes</p>
               <ul className="space-y-2 text-gray-300 text-sm">
-                <li className="flex items-start gap-2"><span style={{ color: "#FCD34D" }}>→</span> Workers migrating to warehousing & logistics for perceived stability</li>
-                <li className="flex items-start gap-2"><span style={{ color: "#FCD34D" }}>→</span> Labor costs up ~8% sector-wide; margins remain razor-thin (12–16%)</li>
-                <li className="flex items-start gap-2"><span style={{ color: "#FCD34D" }}>→</span> Legislative changes reducing production rates per worker</li>
-                <li className="flex items-start gap-2"><span style={{ color: "#FCD34D" }}>→</span> Immigration policy changes reducing available workforce pool</li>
-                <li className="flex items-start gap-2"><span style={{ color: "#FCD34D" }}>→</span> Industry perceived as "dead-end" — limited career advancement visibility</li>
+                <li className="flex items-start gap-2"><span style={{ color: "#d4b88a" }}>→</span> Workers migrating to warehousing & logistics for perceived stability</li>
+                <li className="flex items-start gap-2"><span style={{ color: "#d4b88a" }}>→</span> Labor costs up ~8% sector-wide; margins remain razor-thin (12–16%)</li>
+                <li className="flex items-start gap-2"><span style={{ color: "#d4b88a" }}>→</span> Legislative changes reducing production rates per worker</li>
+                <li className="flex items-start gap-2"><span style={{ color: "#d4b88a" }}>→</span> Immigration policy changes reducing available workforce pool</li>
+                <li className="flex items-start gap-2"><span style={{ color: "#d4b88a" }}>→</span> Industry perceived as "dead-end" — limited career advancement visibility</li>
               </ul>
             </div>
           </div>
@@ -525,7 +572,7 @@ export default function Home() {
 
         {/* Workforce Solutions */}
         <div>
-          <p className="section-label mb-6" style={{ color: "#5EEAD4" }}>Strategic Solutions Framework</p>
+          <p className="section-label mb-6" style={{ color: "#d4b88a" }}>Strategic Solutions Framework</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
               {
@@ -547,12 +594,12 @@ export default function Home() {
                 impact: "Broader, more resilient workforce",
               },
             ].map((solution) => (
-              <div key={solution.title} className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-teal-600 transition-colors">
+              <div key={solution.title} className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-altus-gold transition-colors">
                 <div className="text-3xl mb-3">{solution.icon}</div>
                 <h4 className="font-bold text-white mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>{solution.title}</h4>
                 <p className="text-gray-400 text-sm leading-relaxed mb-4">{solution.desc}</p>
-                <div className="bg-teal-900/40 rounded-lg px-3 py-2 border border-teal-700/40">
-                  <p className="text-teal-300 text-xs font-medium">{solution.impact}</p>
+                <div className="bg-altus-gold/20 rounded-lg px-3 py-2 border border-altus-gold/40">
+                  <p className="text-altus-gold-light text-xs font-medium">{solution.impact}</p>
                 </div>
               </div>
             ))}
@@ -563,12 +610,12 @@ export default function Home() {
       {/* ── SECTION 03: TECHNOLOGY ── */}
       <Section id="technology">
         <div className="flex items-start gap-4 mb-12">
-          <span className="section-label text-5xl font-bold opacity-10 leading-none" style={{ fontFamily: "'Playfair Display', serif", color: "#0D9488" }}>03</span>
+          <span className="section-label text-5xl font-bold opacity-10 leading-none" style={{ fontFamily: "'Playfair Display', serif", color: "#c4a265" }}>03</span>
           <div>
             <p className="section-label mb-2">Digital Transformation</p>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
               Technology as a<br />
-              <span style={{ color: "#0D9488" }}>Competitive Moat</span>
+              <span style={{ color: "#c4a265" }}>Competitive Moat</span>
             </h2>
           </div>
         </div>
@@ -602,7 +649,7 @@ export default function Home() {
                 <XAxis dataKey="tool" tick={{ fontSize: 10, fill: "#6b7280" }} axisLine={false} tickLine={false} angle={-25} textAnchor="end" height={60} />
                 <YAxis tick={{ fontSize: 11, fill: "#6b7280" }} axisLine={false} tickLine={false} unit="%" domain={[0, 70]} />
                 <Tooltip content={<CustomTooltip />} />
-                <Bar dataKey="pct" name="Adoption Rate" unit="%" fill="#0D9488" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="pct" name="Adoption Rate" unit="%" fill="#c4a265" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -614,7 +661,7 @@ export default function Home() {
             {
               title: "Proof of Service",
               icon: "📋",
-              color: "#0D9488",
+              color: "#c4a265",
               points: [
                 "Time-stamped digital reports",
                 "QR code verification at service points",
@@ -628,7 +675,7 @@ export default function Home() {
             {
               title: "Robotics & Automation",
               icon: "🤖",
-              color: "#14B8A6",
+              color: "#b8d4e3",
               points: [
                 "Autonomous floor scrubbers & vacuums",
                 "AI-powered scheduling systems",
@@ -642,7 +689,7 @@ export default function Home() {
             {
               title: "Data Analytics",
               icon: "📊",
-              color: "#0F766E",
+              color: "#a0834a",
               points: [
                 "Hourly-updated management dashboards",
                 "IoT sensor data for predictive cleaning",
@@ -685,7 +732,7 @@ export default function Home() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-transparent flex items-center">
             <div className="p-8 md:p-12 max-w-lg">
-              <p className="section-label mb-3" style={{ color: "#2DD4BF" }}>The Shift</p>
+              <p className="section-label mb-3" style={{ color: "#d4b88a" }}>The Shift</p>
               <h3 className="text-white text-3xl font-bold mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
                 From Cleaners to Robotic Technicians
               </h3>
@@ -701,12 +748,12 @@ export default function Home() {
       {/* ── SECTION 04: SUSTAINABILITY ── */}
       <Section id="sustainability" className="bg-gray-50">
         <div className="flex items-start gap-4 mb-12">
-          <span className="section-label text-5xl font-bold opacity-10 leading-none" style={{ fontFamily: "'Playfair Display', serif", color: "#059669" }}>04</span>
+          <span className="section-label text-5xl font-bold opacity-10 leading-none" style={{ fontFamily: "'Playfair Display', serif", color: "#c4a265" }}>04</span>
           <div>
-            <p className="section-label mb-2" style={{ color: "#059669" }}>Sustainability & ESG</p>
+            <p className="section-label mb-2" style={{ color: "#c4a265" }}>Sustainability & ESG</p>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
               Green Cleaning as a<br />
-              <span style={{ color: "#059669" }}>Growth Driver</span>
+              <span style={{ color: "#c4a265" }}>Growth Driver</span>
             </h2>
           </div>
         </div>
@@ -724,25 +771,25 @@ export default function Home() {
                   icon: "🏆",
                   title: "LEED Certification Support",
                   desc: "Green cleaning programs contribute valuable points toward LEED certification for client buildings, making BSCs strategic partners in sustainability goals.",
-                  color: "#059669",
+                  color: "#c4a265",
                 },
                 {
                   icon: "🧪",
                   title: "Chemical Safety & PFAS Compliance",
                   desc: "Biodegradable, PFAS-free cleaning products reduce liability, improve indoor air quality, and protect staff health — increasingly required by corporate procurement.",
-                  color: "#0D9488",
+                  color: "#c4a265",
                 },
                 {
                   icon: "📊",
                   title: "ESG Reporting Capability",
                   desc: "Clients are requesting sustainability reporting from service providers. BSCs who can provide carbon footprint data and green metrics gain a significant contract advantage.",
-                  color: "#059669",
+                  color: "#c4a265",
                 },
                 {
                   icon: "⚡",
                   title: "Energy-Efficient Operations",
                   desc: "IoT-powered demand-based cleaning reduces energy consumption and chemical usage, lowering costs while improving environmental credentials.",
-                  color: "#0D9488",
+                  color: "#c4a265",
                 },
               ].map((item) => (
                 <div key={item.title} className="flex gap-4 bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
@@ -757,14 +804,14 @@ export default function Home() {
           </div>
           <div>
             <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm mb-6">
-              <p className="section-label mb-4" style={{ color: "#059669" }}>Green Cleaning Business Case</p>
+              <p className="section-label mb-4" style={{ color: "#c4a265" }}>Green Cleaning Business Case</p>
               <div className="space-y-4">
                 {[
-                  { label: "Client Demand for Green Credentials", value: 78, color: "#059669" },
-                  { label: "Cost Reduction via Concentrated Products", value: 65, color: "#0D9488" },
-                  { label: "Staff Health & Safety Improvement", value: 72, color: "#059669" },
-                  { label: "Contract Win Rate with ESG Offering", value: 58, color: "#0D9488" },
-                  { label: "Premium Pricing Opportunity", value: 45, color: "#059669" },
+                  { label: "Client Demand for Green Credentials", value: 78, color: "#c4a265" },
+                  { label: "Cost Reduction via Concentrated Products", value: 65, color: "#c4a265" },
+                  { label: "Staff Health & Safety Improvement", value: 72, color: "#c4a265" },
+                  { label: "Contract Win Rate with ESG Offering", value: 58, color: "#c4a265" },
+                  { label: "Premium Pricing Opportunity", value: 45, color: "#c4a265" },
                 ].map((item) => (
                   <div key={item.label}>
                     <div className="flex justify-between text-sm mb-1">
@@ -782,8 +829,8 @@ export default function Home() {
               </div>
               <p className="text-xs text-gray-400 mt-4">*Indicative industry data based on multiple research sources</p>
             </div>
-            <div className="bg-green-50 rounded-xl p-6 border border-green-100">
-              <p className="section-label text-xs mb-2" style={{ color: "#059669" }}>Strategic Implication</p>
+            <div className="bg-amber-50 rounded-xl p-6 border border-amber-100">
+              <p className="section-label text-xs mb-2" style={{ color: "#c4a265" }}>Strategic Implication</p>
               <p className="text-gray-700 text-sm leading-relaxed">
                 BSCs who invest in green certifications (Green Seal GS-42, LEED-aligned protocols) and can 
                 provide ESG reporting to clients will command <strong>premium pricing</strong> and build 
@@ -797,12 +844,12 @@ export default function Home() {
       {/* ── SECTION 05: GROWTH STRATEGY ── */}
       <Section id="growth">
         <div className="flex items-start gap-4 mb-12">
-          <span className="section-label text-5xl font-bold opacity-10 leading-none" style={{ fontFamily: "'Playfair Display', serif", color: "#0D9488" }}>05</span>
+          <span className="section-label text-5xl font-bold opacity-10 leading-none" style={{ fontFamily: "'Playfair Display', serif", color: "#c4a265" }}>05</span>
           <div>
             <p className="section-label mb-2">Growth Strategy</p>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
               Escaping the<br />
-              <span style={{ color: "#0D9488" }}>Commodity Trap</span>
+              <span style={{ color: "#c4a265" }}>Commodity Trap</span>
             </h2>
           </div>
         </div>
@@ -822,7 +869,7 @@ export default function Home() {
                 <XAxis type="number" tick={{ fontSize: 11, fill: "#6b7280" }} axisLine={false} tickLine={false} unit="%" domain={[0, 80]} />
                 <YAxis dataKey="priority" type="category" tick={{ fontSize: 11, fill: "#374151" }} axisLine={false} tickLine={false} width={185} />
                 <Tooltip content={<CustomTooltip />} />
-                <Bar dataKey="pct" name="BSCs Prioritizing" unit="%" fill="#0D9488" radius={[0, 4, 4, 0]} />
+                <Bar dataKey="pct" name="BSCs Prioritizing" unit="%" fill="#c4a265" radius={[0, 4, 4, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -834,7 +881,7 @@ export default function Home() {
                 <XAxis type="number" tick={{ fontSize: 11, fill: "#6b7280" }} axisLine={false} tickLine={false} unit="%" domain={[0, 100]} />
                 <YAxis dataKey="sector" type="category" tick={{ fontSize: 11, fill: "#374151" }} axisLine={false} tickLine={false} width={150} />
                 <Tooltip content={<CustomTooltip />} />
-                <Bar dataKey="pct" name="BSCs Serving" unit="%" fill="#14B8A6" radius={[0, 4, 4, 0]} />
+                <Bar dataKey="pct" name="BSCs Serving" unit="%" fill="#b8d4e3" radius={[0, 4, 4, 0]} />
               </BarChart>
             </ResponsiveContainer>
             <div className="strategy-box mt-4">
@@ -849,7 +896,7 @@ export default function Home() {
 
         {/* BSC Growth Stages */}
         <div className="bg-gray-950 rounded-2xl p-8 md:p-12">
-          <p className="section-label mb-3" style={{ color: "#5EEAD4" }}>BSCAI Framework</p>
+          <p className="section-label mb-3" style={{ color: "#d4b88a" }}>BSCAI Framework</p>
           <h3 className="text-white text-3xl font-bold mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
             The Six Plateaus of Growth
           </h3>
@@ -861,12 +908,12 @@ export default function Home() {
             {bscGrowthStages.map((stage, i) => (
               <div
                 key={stage.stage}
-                className="bg-gray-800 rounded-xl p-4 border border-gray-700 hover:border-teal-600 transition-colors"
-                style={{ borderTopColor: i < 3 ? "#0D9488" : "#14B8A6", borderTopWidth: "3px" }}
+                className="bg-gray-800 rounded-xl p-4 border border-gray-700 hover:border-altus-gold transition-colors"
+                style={{ borderTopColor: i < 3 ? "#c4a265" : "#b8d4e3", borderTopWidth: "3px" }}
               >
-                <div className="section-label text-xs mb-1" style={{ color: "#5EEAD4" }}>{stage.stage}</div>
+                <div className="section-label text-xs mb-1" style={{ color: "#d4b88a" }}>{stage.stage}</div>
                 <div className="font-bold text-white text-sm mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>{stage.label}</div>
-                <div className="text-teal-400 text-xs font-medium mb-2">{stage.revenue}</div>
+                <div className="text-altus-gold text-xs font-medium mb-2">{stage.revenue}</div>
                 <div className="text-gray-400 text-xs leading-snug">{stage.focus}</div>
               </div>
             ))}
@@ -902,7 +949,7 @@ export default function Home() {
             {
               force: "Supplier Power",
               level: "MEDIUM",
-              levelColor: "#D97706",
+              levelColor: "#c4a265",
               desc: "Chemical and equipment suppliers have moderate power. Supply chain disruptions (post-COVID) and tariffs have increased input costs by 5–10%+.",
               strategy: "Diversify supplier relationships and explore bulk purchasing cooperatives through BSCAI.",
             },
@@ -916,14 +963,14 @@ export default function Home() {
             {
               force: "Threat of Substitutes",
               level: "LOW",
-              levelColor: "#059669",
+              levelColor: "#c4a265",
               desc: "In-house cleaning teams are the primary substitute, but outsourcing trend is accelerating. The 2025 consensus is clear: outsourcing is more cost-effective.",
               strategy: "Educate prospects on the true cost of in-house cleaning vs. professional BSC services.",
             },
             {
               force: "Strategic Opportunity",
               level: "KEY",
-              levelColor: "#0D9488",
+              levelColor: "#c4a265",
               desc: "BSCs who combine technology-enabled transparency, green credentials, and workforce stability will build defensible competitive positions in high-value verticals.",
               strategy: "Focus on healthcare, government, and Class A office buildings where quality and compliance matter more than price.",
             },
@@ -936,8 +983,8 @@ export default function Home() {
                 </span>
               </div>
               <p className="text-gray-500 text-sm leading-relaxed mb-3">{item.desc}</p>
-              <div className="bg-teal-50 rounded-lg p-3 border-l-2 border-teal-400">
-                <p className="text-teal-800 text-xs font-medium">Strategy: {item.strategy}</p>
+              <div className="bg-amber-50 rounded-lg p-3 border-l-2 border-altus-gold">
+                <p className="text-altus-charcoal text-xs font-medium">Strategy: {item.strategy}</p>
               </div>
             </div>
           ))}
@@ -947,7 +994,7 @@ export default function Home() {
       {/* ── ACTION PLAN ── */}
       <Section id="action" className="bg-gray-950 text-white">
         <div className="text-center mb-12">
-          <p className="section-label mb-3" style={{ color: "#5EEAD4" }}>Strategic Action Plan</p>
+          <p className="section-label mb-3" style={{ color: "#d4b88a" }}>Strategic Action Plan</p>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
             90-Day Strategic Priorities
           </h2>
@@ -960,8 +1007,8 @@ export default function Home() {
           {[
             {
               timeframe: "Now — 30 Days",
-              color: "#F59E0B",
-              borderColor: "#D97706",
+              color: "#c4a265",
+              borderColor: "#c4a265",
               actions: [
                 "Audit current turnover rate and calculate true cost of workforce instability",
                 "Assess technology stack — identify which of 5–7 disconnected apps can be consolidated",
@@ -972,8 +1019,8 @@ export default function Home() {
             },
             {
               timeframe: "30–60 Days",
-              color: "#0D9488",
-              borderColor: "#0F766E",
+              color: "#c4a265",
+              borderColor: "#a0834a",
               actions: [
                 "Implement proof-of-service technology for at least 3 key accounts",
                 "Launch demand-based cleaning pilot at one high-traffic facility",
@@ -984,8 +1031,8 @@ export default function Home() {
             },
             {
               timeframe: "60–90 Days",
-              color: "#10B981",
-              borderColor: "#059669",
+              color: "#b8d4e3",
+              borderColor: "#c4a265",
               actions: [
                 "Deploy end-to-end business management software across operations",
                 "Formalize specialization strategy for 1–2 high-value verticals",
@@ -1014,8 +1061,8 @@ export default function Home() {
         </div>
 
         {/* Key Takeaways */}
-        <div className="bg-gradient-to-br from-teal-900/40 to-gray-800 rounded-2xl p-8 md:p-12 border border-teal-700/30">
-          <p className="section-label mb-4" style={{ color: "#5EEAD4" }}>Key Takeaways</p>
+        <div className="bg-gradient-to-br from-altus-charcoal/40 to-gray-800 rounded-2xl p-8 md:p-12 border border-altus-gold/30">
+          <p className="section-label mb-4" style={{ color: "#d4b88a" }}>Key Takeaways</p>
           <h3 className="text-white text-3xl font-bold mb-8" style={{ fontFamily: "'Playfair Display', serif" }}>
             The Winning BSC Formula for 2025
           </h3>
@@ -1059,14 +1106,14 @@ export default function Home() {
         <div className="container max-w-6xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
-              <p className="section-label text-xs mb-3" style={{ color: "#5EEAD4" }}>BSC Industry Strategy 2025</p>
+              <p className="section-label text-xs mb-3" style={{ color: "#d4b88a" }}>Altus Collective Masterclass</p>
               <p className="text-sm leading-relaxed">
                 A comprehensive strategy session for Building Service Contractors, covering market dynamics, 
                 workforce challenges, technology adoption, sustainability, and competitive growth strategy.
               </p>
             </div>
             <div>
-              <p className="section-label text-xs mb-3" style={{ color: "#5EEAD4" }}>Key Sources</p>
+              <p className="section-label text-xs mb-3" style={{ color: "#d4b88a" }}>Key Sources</p>
               <ul className="space-y-1 text-sm">
                 <li>BSCAI 2025 Market Study Report</li>
                 <li>Aspire 2025 Commercial Cleaning Insights</li>
@@ -1077,7 +1124,7 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <p className="section-label text-xs mb-3" style={{ color: "#5EEAD4" }}>Session Structure</p>
+              <p className="section-label text-xs mb-3" style={{ color: "#d4b88a" }}>Session Structure</p>
               <ul className="space-y-1 text-sm">
                 <li>01 · Market Dynamics (8 min)</li>
                 <li>02 · Workforce Strategy (10 min)</li>
@@ -1089,8 +1136,8 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-gray-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-xs">© 2025 BSC Industry Strategy Session. Research compiled from publicly available industry sources.</p>
-            <p className="text-xs" style={{ color: "#5EEAD4" }}>Building Service Contractors Association International (BSCAI)</p>
+            <p className="text-xs">© 2025 Altus Collective. Research compiled from publicly available industry sources.</p>
+            <p className="text-xs" style={{ color: "#d4b88a" }}>Altus Collective — altuscollective.us</p>
           </div>
         </div>
       </footer>

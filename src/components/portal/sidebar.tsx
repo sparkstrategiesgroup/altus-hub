@@ -15,6 +15,7 @@ import {
   Building2,
   FileSpreadsheet,
   GraduationCap,
+  Send,
   LogOut,
   X,
 } from "lucide-react";
@@ -31,6 +32,7 @@ const navItems = [
   { href: "/messages", label: "Messages", icon: Mail },
   { href: "/altus-digital", label: "Altus Digital", icon: FileSpreadsheet },
   { href: "/masterclass", label: "Masterclass", icon: GraduationCap },
+  { href: "/email-editor", label: "Email Editor", icon: Send },
   { href: "/profile", label: "Profile", icon: User },
 ];
 
