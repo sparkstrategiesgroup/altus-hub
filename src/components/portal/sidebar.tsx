@@ -84,7 +84,7 @@ export function PortalSidebar({ open, onClose }: PortalSidebarProps) {
         <nav className="flex-1 space-y-1 p-3">
           {navItems.map((item) => {
             // Hide admin-only items if user is not admin
-            if (item.adminOnly && session?.user?.role !== "admin") {
+            if (item.adminOnly && (session?.user as any)?.role !== "admin") {
               return null;
             }
 

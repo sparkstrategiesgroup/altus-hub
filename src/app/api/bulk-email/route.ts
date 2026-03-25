@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { auth } from "@/auth";
 import nodemailer from "nodemailer";
-import { prisma } from "@/lib/prisma";
+import { prisma as _prisma } from "@/lib/prisma";
+const prisma = _prisma as any;
 
 export async function POST(req: Request) {
   const session = await auth();
@@ -33,7 +34,7 @@ export async function POST(req: Request) {
     });
 
     const recipients = accounts.filter(
-      (a) => a.email && a.email.trim().length > 0
+      (a: any) => a.email && a.email.trim().length > 0
     );
 
     if (recipients.length === 0) {
@@ -66,7 +67,7 @@ export async function POST(req: Request) {
       const batch = recipients.slice(i, i + batchSize);
 
       const results = await Promise.allSettled(
-        batch.map(async (recipient) => {
+        batch.map(async (recipient: any) => {
           // Personalize: replace (Name) with contact name
           const firstName = recipient.primaryContact
             ? recipient.primaryContact.split(" ")[0]
