@@ -19,6 +19,7 @@ export async function proxy(request: NextRequest) {
     "/events",
     "/messages",
     "/profile",
+    "/admin",
   ];
 
   const isProtected = protectedPaths.some((path) =>
@@ -49,6 +50,7 @@ export const config = {
     "/events/:path*",
     "/messages/:path*",
     "/profile/:path*",
+    "/admin/:path*",
     "/login",
     "/register",
   ],

@@ -291,3 +291,41 @@ model MemberContact {
   memberAccountId  String
   memberAccount    MemberAccount @relation(fields: [memberAccountId], references: [id], onDelete: Cascade)
 }
+
+model SiteConfig {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     Json
+  updatedAt DateTime @updatedAt
+  updatedBy String?
+}
+
+model NavItem {
+  id       String  @id @default(cuid())
+  href     String
+  label    String
+  icon     String
+  position Int     @default(0)
+  visible  Boolean @default(true)
+  adminOnly Boolean @default(false)
+}
+
+model PageContent {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  title     String
+  content   Json
+  updatedAt DateTime @updatedAt
+  updatedBy String?
+}
+
+model EmailCampaign {
+  id          String   @id @default(cuid())
+  subject     String
+  htmlContent String
+  sentBy      String
+  sentAt      DateTime @default(now())
+  totalSent   Int      @default(0)
+  totalFailed Int      @default(0)
+  status      String   @default("completed")
+}

@@ -18,8 +18,9 @@ import {
   Send,
   LogOut,
   X,
+  Settings,
 } from "lucide-react";
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
 const navItems = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -33,6 +34,7 @@ const navItems = [
   { href: "/altus-digital", label: "Altus Digital", icon: FileSpreadsheet },
   { href: "/altusacademy/bsc-strategy", label: "Strategy", icon: GraduationCap },
   { href: "/email-editor", label: "Email Editor", icon: Send },
+  { href: "/admin", label: "Admin", icon: Settings, adminOnly: true },
   { href: "/profile", label: "Profile", icon: User },
 ];
 
@@ -43,6 +45,7 @@ interface PortalSidebarProps {
 
 export function PortalSidebar({ open, onClose }: PortalSidebarProps) {
   const pathname = usePathname();
+  const { data: session } = useSession();
 
   return (
     <>
@@ -80,6 +83,11 @@ export function PortalSidebar({ open, onClose }: PortalSidebarProps) {
 
         <nav className="flex-1 space-y-1 p-3">
           {navItems.map((item) => {
+            // Hide admin-only items if user is not admin
+            if (item.adminOnly && session?.user?.role !== "admin") {
+              return null;
+            }
+
             const active = pathname.startsWith(item.href);
             return (
               <Link

@@ -100,6 +100,18 @@ export async function POST(req: Request) {
       }
     }
 
+    // Create EmailCampaign record
+    await prisma.emailCampaign.create({
+      data: {
+        subject: subject,
+        htmlContent: htmlContent.substring(0, 10000), // truncate for storage
+        sentBy: session.user.email || "unknown",
+        totalSent: sent,
+        totalFailed: failed,
+        status: failed > 0 ? "partial" : "completed",
+      },
+    });
+
     return NextResponse.json({
       success: true,
       total: recipients.length,
