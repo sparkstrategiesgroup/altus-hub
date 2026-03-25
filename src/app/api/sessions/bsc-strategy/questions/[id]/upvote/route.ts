@@ -12,16 +12,17 @@ const upvotesDB: Map<string, Set<string>> = new Map();
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const session = await auth();
 
     if (!session?.user?.email) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    const questionId = params.id;
+    const questionId = id;
     const userEmail = session.user.email;
 
     // Check if user already upvoted
