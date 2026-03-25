@@ -31,7 +31,7 @@ const navItems = [
   { href: "/events", label: "Events", icon: CalendarDays },
   { href: "/messages", label: "Messages", icon: Mail },
   { href: "/altus-digital", label: "Altus Digital", icon: FileSpreadsheet },
-  { href: "/masterclass", label: "Masterclass", icon: GraduationCap },
+  { href: "/altusacademy/bsc-strategy", label: "Strategy", icon: GraduationCap },
   { href: "/email-editor", label: "Email Editor", icon: Send },
   { href: "/profile", label: "Profile", icon: User },
 ];
