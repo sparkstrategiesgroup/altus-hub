@@ -78,7 +78,7 @@ export default function ContactPage() {
                   <div>
                     <p className="text-sm font-medium text-altus-charcoal">Email</p>
                     <p className="text-sm text-altus-slate">
-                      info@altuscollective.com
+                      info@altuscollective.us
                     </p>
                   </div>
                 </div>

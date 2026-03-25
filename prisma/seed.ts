@@ -9,11 +9,11 @@ async function main() {
   // Create test user
   const passwordHash = await hash("password123", 12);
   const user = await prisma.user.upsert({
-    where: { email: "demo@altuscollective.com" },
+    where: { email: "demo@altuscollective.us" },
     update: {},
     create: {
       name: "Demo User",
-      email: "demo@altuscollective.com",
+      email: "demo@altuscollective.us",
       passwordHash,
       company: "Demo BSC Company",
       companySize: "101-500 employees",
@@ -478,7 +478,7 @@ async function main() {
   console.log(`Seeded ${memberAccounts.length} ISSA member accounts`);
 
   console.log("Seed completed successfully!");
-  console.log("Demo login: demo@altuscollective.com / password123");
+  console.log("Demo login: demo@altuscollective.us / password123");
 }
 
 main()
