@@ -13,6 +13,7 @@ import {
   Mail,
   User,
   Building2,
+  FileSpreadsheet,
   LogOut,
   X,
 } from "lucide-react";
@@ -27,6 +28,7 @@ const navItems = [
   { href: "/resources", label: "Resources", icon: BookOpen },
   { href: "/events", label: "Events", icon: CalendarDays },
   { href: "/messages", label: "Messages", icon: Mail },
+  { href: "/altus-digital", label: "Altus Digital", icon: FileSpreadsheet },
   { href: "/profile", label: "Profile", icon: User },
 ];
 
