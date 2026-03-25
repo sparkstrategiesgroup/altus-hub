@@ -12,6 +12,7 @@ import {
   CalendarDays,
   Mail,
   User,
+  Building2,
   LogOut,
   X,
 } from "lucide-react";
@@ -19,6 +20,7 @@ import { signOut } from "next-auth/react";
 
 const navItems = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/accounts", label: "Accounts", icon: Building2 },
   { href: "/sessions", label: "Sessions", icon: Calendar },
   { href: "/peer-groups", label: "Peer Groups", icon: Users },
   { href: "/discussions", label: "Discussions", icon: MessageSquare },

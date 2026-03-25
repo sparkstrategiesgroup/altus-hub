@@ -4,7 +4,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
 }
 
 model User {
@@ -219,13 +219,13 @@ model EventRsvp {
 model Message {
   id         String   @id @default(cuid())
   content    String
-  senderId   String
-  receiverId String
+  senderId   String?
+  receiverId String?
   isRead     Boolean  @default(false)
   createdAt  DateTime @default(now())
 
-  sender   User @relation("SentMessages", fields: [senderId], references: [id], onDelete: Cascade)
-  receiver User @relation("ReceivedMessages", fields: [receiverId], references: [id], onDelete: Cascade)
+  sender   User? @relation("SentMessages", fields: [senderId], references: [id], onDelete: SetNull)
+  receiver User? @relation("ReceivedMessages", fields: [receiverId], references: [id], onDelete: SetNull)
 }
 
 model ContactSubmission {
@@ -237,4 +237,57 @@ model ContactSubmission {
   message   String
   status    String   @default("new")
   createdAt DateTime @default(now())
+}
+
+model MemberAccount {
+  id                String    @id @default(cuid())
+  accountName       String
+  accountOwner      String?
+  city              String?
+  state             String?
+  salesVolume       String?
+  engagementScore   Int       @default(0)
+  renewalDate       DateTime?
+  balanceDue        String?
+  primaryContact    String?
+  email             String?
+  website           String?
+  riskLevel         String?
+  bscCouncil        Boolean   @default(false)
+  bscMemberName     String?
+  inRenewalTab      Boolean   @default(false)
+  inBalanceDueTab   Boolean   @default(false)
+  inEngagementTab   Boolean   @default(false)
+  duplicateCount    Int       @default(0)
+  duplicateGroup    String?
+  icpTier           String?
+  industryVertical  String?
+  companySizeTier   String?
+  buyingSignals     String?
+  companyNotes      String?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  contacts MemberContact[]
+}
+
+model MemberContact {
+  id               String   @id @default(cuid())
+  name             String?
+  email            String?
+  title            String?
+  phone            String?
+  linkedIn         String?
+  decisionRole     String?
+  engagementHistory String?
+  notes            String?
+  lastContactDate  DateTime?
+  preferredChannel String?
+  leadScore        Int?
+  contactOrder     Int      @default(1)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  memberAccountId  String
+  memberAccount    MemberAccount @relation(fields: [memberAccountId], references: [id], onDelete: Cascade)
 }
