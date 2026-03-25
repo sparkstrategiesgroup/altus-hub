@@ -46,3 +46,36 @@ body {
   background: var(--background);
   color: var(--foreground);
 }
+
+/* ─── Masterclass: Editorial Modernism Styles ─── */
+
+.pull-quote {
+  border-left: 4px solid #0D9488;
+  padding-left: 1.5rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  color: #374151;
+}
+
+.stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 900;
+  color: #0D9488;
+  line-height: 1;
+}
+
+.section-label {
+  font-family: monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #0D9488;
+  font-weight: 500;
+}
+
+.strategy-box {
+  background: #f0fdfa;
+  border-left: 4px solid #0D9488;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
