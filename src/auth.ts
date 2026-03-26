@@ -31,9 +31,15 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         const prisma = new PrismaClient({ adapter });
 
         try {
+          console.log("[auth] Attempting login for:", credentials.email);
+          console.log("[auth] DIRECT_URL set:", !!process.env.DIRECT_URL);
+          console.log("[auth] DATABASE_URL set:", !!process.env.DATABASE_URL);
+
           const user = await prisma.user.findUnique({
             where: { email: credentials.email },
           });
+
+          console.log("[auth] User found:", !!user, user ? "hasPassword:" + !!user.passwordHash : "");
 
           if (!user || !user.passwordHash) return null;
 
@@ -41,6 +47,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
             credentials.password,
             user.passwordHash
           );
+          console.log("[auth] Password valid:", valid);
           if (!valid) return null;
 
           return {
@@ -50,6 +57,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
             image: user.image,
             role: user.role,
           };
+        } catch (error) {
+          console.error("[auth] Error during login:", error);
+          return null;
         } finally {
           await prisma.$disconnect();
         }
