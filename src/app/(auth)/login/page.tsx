@@ -26,12 +26,13 @@ export default function LoginPage() {
       redirect: false,
     });
 
-    if (result?.error) {
+    console.log("[login] signIn result:", JSON.stringify(result));
+
+    if (!result || result.error || result.ok === false) {
       setError("Invalid email or password");
       setLoading(false);
     } else {
-      router.push("/dashboard");
-      router.refresh();
+      window.location.href = "/dashboard";
     }
   }
 
