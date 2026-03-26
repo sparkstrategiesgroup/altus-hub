@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
+import { prisma } from "@/lib/prisma";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   secret: process.env.AUTH_SECRET,
@@ -23,17 +24,10 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           return null;
         }
 
-        const { PrismaClient } = await import("@/generated/prisma/client");
-        const { PrismaPg } = await import("@prisma/adapter-pg");
-        const bcryptjs = await import("bcryptjs");
-
-        const adapter = new PrismaPg({ connectionString: process.env.DIRECT_URL || process.env.DATABASE_URL });
-        const prisma = new PrismaClient({ adapter });
-
         try {
+          const bcryptjs = await import("bcryptjs");
+
           console.log("[auth] Attempting login for:", credentials.email);
-          console.log("[auth] DIRECT_URL set:", !!process.env.DIRECT_URL);
-          console.log("[auth] DATABASE_URL set:", !!process.env.DATABASE_URL);
 
           const user = await prisma.user.findUnique({
             where: { email: credentials.email },
@@ -60,8 +54,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         } catch (error) {
           console.error("[auth] Error during login:", error);
           return null;
-        } finally {
-          await prisma.$disconnect();
         }
       },
     }),
